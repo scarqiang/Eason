@@ -1,0 +1,9 @@
+{
+  "commitish" : "1.0.9",
+  "iOS" : [
+    {
+      "hash" : "64bec5b3fab741dba3a357ff441caf5339f4ca9bd3d941798f0130b9d11353a6",
+      "name" : "YYKit"
+    }
+  ]
+}
