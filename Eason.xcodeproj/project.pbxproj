@@ -23,6 +23,7 @@
 		72B5AB621F789C4B00B35D7D /* EasonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B5AB611F789C4B00B35D7D /* EasonUITests.swift */; };
 		72C808981F7DE3D5002DB148 /* EFSwitchBarNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C808971F7DE3D5002DB148 /* EFSwitchBarNode.swift */; };
 		72D36D9D1F78B09000200200 /* EFGameListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D36D9C1F78B09000200200 /* EFGameListViewController.swift */; };
+		A5D268A21F7FCCC300E32E6A /* EFTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D268A11F7FCCC300E32E6A /* EFTestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		72B5AB631F789C4B00B35D7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72C808971F7DE3D5002DB148 /* EFSwitchBarNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFSwitchBarNode.swift; sourceTree = "<group>"; };
 		72D36D9C1F78B09000200200 /* EFGameListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFGameListViewController.swift; sourceTree = "<group>"; };
+		A5D268A11F7FCCC300E32E6A /* EFTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFTestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				72B187CD1F78D2B700021F66 /* EFGameListCellNode.swift */,
 				722AB58C1F7CC9A400B73C6B /* EFGameModuleCellNode.swift */,
 				72C808971F7DE3D5002DB148 /* EFSwitchBarNode.swift */,
+				A5D268A11F7FCCC300E32E6A /* EFTestViewController.swift */,
 			);
 			path = GameList;
 			sourceTree = "<group>";
@@ -245,7 +248,7 @@
 				TargetAttributes = {
 					72B5AB3D1F789C4B00B35D7D = {
 						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					72B5AB511F789C4B00B35D7D = {
 						CreatedOnToolsVersion = 9.0;
@@ -336,6 +339,7 @@
 				72B5AB441F789C4B00B35D7D /* ViewController.swift in Sources */,
 				722AB58D1F7CC9A400B73C6B /* EFGameModuleCellNode.swift in Sources */,
 				72C808981F7DE3D5002DB148 /* EFSwitchBarNode.swift in Sources */,
+				A5D268A21F7FCCC300E32E6A /* EFTestViewController.swift in Sources */,
 				72D36D9D1F78B09000200200 /* EFGameListViewController.swift in Sources */,
 				72B187CE1F78D2B700021F66 /* EFGameListCellNode.swift in Sources */,
 				72B5AB421F789C4B00B35D7D /* AppDelegate.swift in Sources */,
@@ -505,9 +509,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 9VS2U4JQW8;
+				DEVELOPMENT_TEAM = 543A9MYU9L;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -515,10 +519,10 @@
 				INFOPLIST_FILE = Eason/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ae.sedfh;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eson.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e10eab63-56bb-4a72-a289-d06c79a08f8e";
-				PROVISIONING_PROFILE_SPECIFIER = devsedfh20170613;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/Eason/Eason-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -529,9 +533,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 543A9MYU9L;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -539,7 +544,7 @@
 				INFOPLIST_FILE = Eason/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ae.sedfh;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eson.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/Eason/Eason-Bridging-Header.h";

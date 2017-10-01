@@ -11,10 +11,11 @@ import Alamofire
 
 final class EFGameListViewController: ASViewController<ASDisplayNode>, ASTableDataSource, ASTableDelegate, ASCollectionDelegate, ASCollectionDataSource, EFSwitchBarNodeDelegate {
 
-    let tableNode = ASTableNode()
-    let rootNode = ASDisplayNode()
-    var collectionNode: ASCollectionNode?
-    var topBar: EFSwitchBarNode?
+    private let tableNode = ASTableNode()
+    private let rootNode = ASDisplayNode()
+    private var collectionNode: ASCollectionNode?
+    private var topBar: EFSwitchBarNode?
+    private var isAddTopBar = false
     var selectIndex: Int {
         get {
             let index = UserDefaults.standard.object(forKey: "selectIndex") as? String
@@ -33,10 +34,6 @@ final class EFGameListViewController: ASViewController<ASDisplayNode>, ASTableDa
     init() {
         super.init(node: rootNode)
         rootNode.backgroundColor = UIColor.white
-//        ASLayoutSpec * _Nonnull(^ASLayoutSpecBlock)(__kindof ASDisplayNode * _Nonnull node, ASSizeRange constrainedSize);
-//        self.node.layoutSpecBlock = (_ node:ASDisplayNode, _ constrainedSize: ASSizeRange)->ASLayoutSpec {
-//
-//        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -48,15 +45,20 @@ final class EFGameListViewController: ASViewController<ASDisplayNode>, ASTableDa
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 70, height: 32))
         imageView.image = #imageLiteral(resourceName: "logo")
         self.navigationItem.titleView = imageView
+        let backButton = UIButton(type: .custom)
+        backButton.frame = CGRect(x: 0, y: 0, width: 80, height: 35)
+        backButton.setTitle("Back", for: .normal)
+        backButton.setTitleColor(UIColor.blue, for: .normal)
+        backButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
+        let backItem = UIBarButtonItem(customView: backButton)
+        self.navigationItem.leftBarButtonItem = backItem
         
         let barHeight = UIApplication.shared.statusBarFrame.size.height + (self.navigationController?.navigationBar.frame.height)!
-//        topBar = EFSwitchBarNode()
-//        topBar!.delegate = self
-//        topBar!.frame = CGRect(x: 0, y: barHeight, width: self.view.size.width, height: EFSwitchBarNode.viewHeight)
-//        self.node.addSubnode(topBar!)
         topBar = EFSwitchBarNode()
         topBar!.delegate = self
-        node.addSubnode(topBar!)
+        topBar!.frame = CGRect(x: 0, y: barHeight, width: self.view.size.width, height: EFSwitchBarNode.viewHeight)
+        
+        self.automaticallyAdjustsScrollViewInsets = false
         
         let collectionViewLayout = UICollectionViewFlowLayout()
         let collectionNodeHeight = self.view.size.height - barHeight - EFSwitchBarNode.viewHeight
@@ -69,13 +71,14 @@ final class EFGameListViewController: ASViewController<ASDisplayNode>, ASTableDa
         collectionNode?.dataSource = self;
         collectionNode?.view.isPagingEnabled = true
         node.addSubnode(collectionNode!)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let barHeight = UIApplication.shared.statusBarFrame.size.height + (self.navigationController?.navigationBar.frame.height)!
-        topBar!.frame = CGRect(x: 0, y: barHeight, width: self.view.size.width, height: EFSwitchBarNode.viewHeight)
+        if isAddTopBar == false {
+            self.node.addSubnode(topBar!)
+            isAddTopBar = true
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -87,6 +90,10 @@ final class EFGameListViewController: ASViewController<ASDisplayNode>, ASTableDa
         let intexPath = IndexPath(row: index, section: 0)
         collectionNode?.scrollToItem(at: intexPath, at: .left, animated: false)
         topBar!.scrollToItem(indexPath: intexPath)
+    }
+    
+    @objc func goBack() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     //MARK: ASCollectionNode data source and delegate

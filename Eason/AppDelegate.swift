@@ -17,10 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let gameListVC = EFGameListViewController()
-        let navbar = UINavigationController(rootViewController: gameListVC)
-        window = UIWindow()
-        window?.rootViewController = navbar
+//        let gameListVC = EFGameListViewController()
+//        let navbar = UINavigationController(rootViewController: gameListVC)
+//        window = UIWindow()
+//        window?.rootViewController = navbar
         return true
     }
 

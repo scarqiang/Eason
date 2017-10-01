@@ -13,8 +13,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        
+        let bar = EFSwitchBarNode()
+        bar.frame = CGRect(x: 0, y: 64, width: self.view.frame.width, height: 50)
+        self.view .addSubview(bar.view)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -23,7 +24,7 @@ class ViewController: UIViewController {
         label.font = UIFont.systemFont(ofSize: 18)
         label.text = "Text"
         label.sizeToFit()
-        self.view.addSubview(label)
+//        self.view.addSubview(label)
         label.center = self.view.center;
         UIView.animate(withDuration: 1) {
            label.transform = CGAffineTransform.init(scaleX: 2, y: 2)
@@ -31,7 +32,7 @@ class ViewController: UIViewController {
         }
         
         let textView = UIView(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
-        view.addSubview(textView)
+//        view.addSubview(textView)
         
         let textLayer = CATextLayer()
         textLayer.backgroundColor = UIColor.green.cgColor
@@ -63,9 +64,16 @@ class ViewController: UIViewController {
     }
 
     @IBAction func didClickButton(_ sender: Any) {
-        self.present(EFGameListViewController(), animated: true, completion: nil)
+        let gameListVC = EFGameListViewController()
+        let navbar = UINavigationController(rootViewController: gameListVC)
+        self.present(navbar, animated: true, completion: nil)
     }
     
+    @IBAction func presentToTestVC(_ sender: Any) {
+        let testVC = EFTestViewController(node: ASDisplayNode())
+        let navbar2 = UINavigationController(rootViewController: testVC)
+        self.present(navbar2, animated: true, completion: nil)
+    }
     
 }
 

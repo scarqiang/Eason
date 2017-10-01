@@ -52,7 +52,8 @@ class EFSwitchBarNode: ASDisplayNode, ASCollectionDelegate, ASCollectionDataSour
     }
     
     func collectionNode(_ collectionNode: ASCollectionNode, nodeForItemAt indexPath: IndexPath) -> ASCellNode {
-        return EFSwitchBarItemNode(titles[indexPath.row], self)
+        let cell = EFSwitchBarItemNode(titles[indexPath.row], self)
+        return cell
     }
     
     //MARK: EFSwitchBarItemDelegate
