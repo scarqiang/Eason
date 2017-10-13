@@ -7,15 +7,14 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let bar = EFSwitchBarNode()
-        bar.frame = CGRect(x: 0, y: 64, width: self.view.frame.width, height: 50)
-        self.view .addSubview(bar.view)
+        
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -70,10 +69,39 @@ class ViewController: UIViewController {
     }
     
     @IBAction func presentToTestVC(_ sender: Any) {
-        let testVC = EFTestViewController(node: ASDisplayNode())
-        let navbar2 = UINavigationController(rootViewController: testVC)
-        self.present(navbar2, animated: true, completion: nil)
+        //test collectionNode
+//        let testVC = EFTestViewController(node: ASDisplayNode())
+//        let navbar2 = UINavigationController(rootViewController: testVC)
+//        self.present(navbar2, animated: true, completion: nil)
+        
+        //test database
+//        let jsonString = jsonToString(json: ["result": ["testString":"XXX"], "resultLists": [["testString":"XXX1"], ["testString":"XXX2"]]])
+//        let wap = EFAnalyzeWapModel(JSONString: jsonString)
+//        let wap = EFAnalyzeWapModel(value: ["result":["testString":"XXX"]])
+//        let realm = try! Realm()
+//        try! realm.write {
+//            realm.add(wap!)
+//        }
+//        let wapList = realm.objects(EFAnalyzeWapModel.self)
+//        print("\(wapList)")
+        
+        //test open url
+//        let url = URL(string: "twtestios://networking_mode")
+//        UIApplication.shared.openURL(url!)
+        EFExamineTool.taggerTestMode(uuidReset: false, userDefaultReset: false, gameCode: "krtestios")
+
+        //tes hexstring to data
+//        let hexString = "7b2266696c655f6e616d65223a2231353036333933313332222c22757365725f64656661756c745f7265736574223a302c22757569645f7265736574223a307d"
+//        let data:Data = (String.hexadecimal(hexString)())!
+//        let string = String(data: data, encoding: String.Encoding.utf8) as String!
+//        let hexStr = data.hexadecimal()
+        
+        //test networking
+//        let netManager = EFNetworking.shared
+//        netManager.fetchGameList(area: .sea) { (gameList) in
+//            print(gameList!)
+//        }
+        
     }
-    
 }
 

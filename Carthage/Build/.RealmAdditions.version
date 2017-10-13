@@ -1,0 +1,9 @@
+{
+  "commitish" : "2.0.0",
+  "iOS" : [
+    {
+      "hash" : "b5ceaef011a0a21e995d1ecdb844977cc9bc7a7a774002acb6218b8438ed3f1d",
+      "name" : "RealmAdditions"
+    }
+  ]
+}

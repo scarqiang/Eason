@@ -1,0 +1,11 @@
+framework module RealmAdditions {
+  umbrella header "RealmAdditions.h"
+
+  export *
+  module * { export * }
+}
+
+module RealmAdditions.Swift {
+    header "RealmAdditions-Swift.h"
+    requires objc
+}

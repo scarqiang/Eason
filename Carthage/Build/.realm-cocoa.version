@@ -1,0 +1,13 @@
+{
+  "commitish" : "v2.10.2",
+  "iOS" : [
+    {
+      "hash" : "2be2508751ec0358df83afd46c8adbd7802dda56aa982f75cecea2790fba2462",
+      "name" : "RealmSwift"
+    },
+    {
+      "hash" : "0d66d0d1e4202b21ed243b28d0d4d7be219a72770f8e0ee789b0700673a1fbea",
+      "name" : "Realm"
+    }
+  ]
+}

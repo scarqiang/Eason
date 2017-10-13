@@ -7,7 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		721A13D81F8C9DE900769855 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 721A13D71F8C9DE800769855 /* Realm.framework */; };
+		721A13DB1F8CBF4800769855 /* EFExamineTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721A13DA1F8CBF4800769855 /* EFExamineTool.swift */; };
+		721A13DD1F8DB82200769855 /* EFAppAnalyzationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721A13DC1F8DB82200769855 /* EFAppAnalyzationModel.swift */; };
+		721A13EB1F8F69FC00769855 /* EFGameListItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721A13EA1F8F69FC00769855 /* EFGameListItemModel.swift */; };
+		721A13ED1F8F737100769855 /* EFNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721A13EC1F8F737100769855 /* EFNetworking.swift */; };
+		72209BCE1F8F98BC008C50B9 /* AlamofireObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72209BCD1F8F98BB008C50B9 /* AlamofireObjectMapper.swift */; };
 		722AB58D1F7CC9A400B73C6B /* EFGameModuleCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722AB58C1F7CC9A400B73C6B /* EFGameModuleCellNode.swift */; };
+		72A9C33B1F8B57FB000FEE5D /* EFTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A9C33A1F8B57FB000FEE5D /* EFTestViewController.swift */; };
+		72A9C33E1F8B6B32000FEE5D /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A9C33C1F8B6B31000FEE5D /* ObjectMapper.framework */; };
+		72A9C33F1F8B6B32000FEE5D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A9C33D1F8B6B32000FEE5D /* RealmSwift.framework */; };
+		72A9C3441F8B6FCB000FEE5D /* EFAnalyzeResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A9C3431F8B6FCB000FEE5D /* EFAnalyzeResultModel.swift */; };
 		72B187CE1F78D2B700021F66 /* EFGameListCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B187CD1F78D2B700021F66 /* EFGameListCellNode.swift */; };
 		72B187D01F78DFF800021F66 /* YYKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B187CF1F78DFF800021F66 /* YYKit.framework */; };
 		72B500061F78A4DF00DFEA50 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B500051F78A4DF00DFEA50 /* Alamofire.framework */; };
@@ -23,7 +33,6 @@
 		72B5AB621F789C4B00B35D7D /* EasonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B5AB611F789C4B00B35D7D /* EasonUITests.swift */; };
 		72C808981F7DE3D5002DB148 /* EFSwitchBarNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C808971F7DE3D5002DB148 /* EFSwitchBarNode.swift */; };
 		72D36D9D1F78B09000200200 /* EFGameListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D36D9C1F78B09000200200 /* EFGameListViewController.swift */; };
-		A5D268A21F7FCCC300E32E6A /* EFTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D268A11F7FCCC300E32E6A /* EFTestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +53,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		721A13D71F8C9DE800769855 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		721A13DA1F8CBF4800769855 /* EFExamineTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFExamineTool.swift; sourceTree = "<group>"; };
+		721A13DC1F8DB82200769855 /* EFAppAnalyzationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFAppAnalyzationModel.swift; sourceTree = "<group>"; };
+		721A13EA1F8F69FC00769855 /* EFGameListItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFGameListItemModel.swift; sourceTree = "<group>"; };
+		721A13EC1F8F737100769855 /* EFNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFNetworking.swift; sourceTree = "<group>"; };
+		72209BCD1F8F98BB008C50B9 /* AlamofireObjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireObjectMapper.swift; sourceTree = "<group>"; };
 		722AB58C1F7CC9A400B73C6B /* EFGameModuleCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFGameModuleCellNode.swift; sourceTree = "<group>"; };
+		72A9C33A1F8B57FB000FEE5D /* EFTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFTestViewController.swift; sourceTree = "<group>"; };
+		72A9C33C1F8B6B31000FEE5D /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
+		72A9C33D1F8B6B32000FEE5D /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		72A9C3431F8B6FCB000FEE5D /* EFAnalyzeResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFAnalyzeResultModel.swift; sourceTree = "<group>"; };
 		72B187CD1F78D2B700021F66 /* EFGameListCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFGameListCellNode.swift; sourceTree = "<group>"; };
 		72B187CF1F78DFF800021F66 /* YYKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YYKit.framework; path = Carthage/Build/iOS/YYKit.framework; sourceTree = "<group>"; };
 		72B500031F78A4B700DFEA50 /* Eason-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Eason-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -67,7 +86,6 @@
 		72B5AB631F789C4B00B35D7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72C808971F7DE3D5002DB148 /* EFSwitchBarNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFSwitchBarNode.swift; sourceTree = "<group>"; };
 		72D36D9C1F78B09000200200 /* EFGameListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFGameListViewController.swift; sourceTree = "<group>"; };
-		A5D268A11F7FCCC300E32E6A /* EFTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFTestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +93,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				721A13D81F8C9DE900769855 /* Realm.framework in Frameworks */,
+				72A9C33E1F8B6B32000FEE5D /* ObjectMapper.framework in Frameworks */,
+				72A9C33F1F8B6B32000FEE5D /* RealmSwift.framework in Frameworks */,
 				72B187D01F78DFF800021F66 /* YYKit.framework in Frameworks */,
 				72B5000C1F78AA0F00DFEA50 /* PINRemoteImage.framework in Frameworks */,
 				72B5000D1F78AA0F00DFEA50 /* PINCache.framework in Frameworks */,
@@ -100,9 +121,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		721A13D91F8CBEBF00769855 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				72209BCD1F8F98BB008C50B9 /* AlamofireObjectMapper.swift */,
+				721A13DA1F8CBF4800769855 /* EFExamineTool.swift */,
+				721A13EC1F8F737100769855 /* EFNetworking.swift */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		72A9C3401F8B6C23000FEE5D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				72A9C3431F8B6FCB000FEE5D /* EFAnalyzeResultModel.swift */,
+				721A13DC1F8DB82200769855 /* EFAppAnalyzationModel.swift */,
+				721A13EA1F8F69FC00769855 /* EFGameListItemModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		72B500041F78A4DE00DFEA50 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				721A13D71F8C9DE800769855 /* Realm.framework */,
+				72A9C33C1F8B6B31000FEE5D /* ObjectMapper.framework */,
+				72A9C33D1F8B6B32000FEE5D /* RealmSwift.framework */,
 				72B187CF1F78DFF800021F66 /* YYKit.framework */,
 				72B5000B1F78AA0F00DFEA50 /* PINCache.framework */,
 				72B5000A1F78AA0F00DFEA50 /* PINRemoteImage.framework */,
@@ -115,11 +159,11 @@
 		72B5000E1F78AE8100DFEA50 /* GameList */ = {
 			isa = PBXGroup;
 			children = (
+				72A9C33A1F8B57FB000FEE5D /* EFTestViewController.swift */,
 				72D36D9C1F78B09000200200 /* EFGameListViewController.swift */,
 				72B187CD1F78D2B700021F66 /* EFGameListCellNode.swift */,
 				722AB58C1F7CC9A400B73C6B /* EFGameModuleCellNode.swift */,
 				72C808971F7DE3D5002DB148 /* EFSwitchBarNode.swift */,
-				A5D268A11F7FCCC300E32E6A /* EFTestViewController.swift */,
 			);
 			path = GameList;
 			sourceTree = "<group>";
@@ -148,6 +192,8 @@
 		72B5AB401F789C4B00B35D7D /* Eason */ = {
 			isa = PBXGroup;
 			children = (
+				721A13D91F8CBEBF00769855 /* Tool */,
+				72A9C3401F8B6C23000FEE5D /* Model */,
 				72B5000E1F78AE8100DFEA50 /* GameList */,
 				72B5AB411F789C4B00B35D7D /* AppDelegate.swift */,
 				72B5AB431F789C4B00B35D7D /* ViewController.swift */,
@@ -321,6 +367,9 @@
 				"$(SRCROOT)/Carthage/Build/iOS/PINCache.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/PINRemoteImage.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/YYKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 			);
 			name = "Carthage Run Script";
 			outputPaths = (
@@ -336,13 +385,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				721A13ED1F8F737100769855 /* EFNetworking.swift in Sources */,
 				72B5AB441F789C4B00B35D7D /* ViewController.swift in Sources */,
 				722AB58D1F7CC9A400B73C6B /* EFGameModuleCellNode.swift in Sources */,
+				72209BCE1F8F98BC008C50B9 /* AlamofireObjectMapper.swift in Sources */,
 				72C808981F7DE3D5002DB148 /* EFSwitchBarNode.swift in Sources */,
-				A5D268A21F7FCCC300E32E6A /* EFTestViewController.swift in Sources */,
+				721A13DD1F8DB82200769855 /* EFAppAnalyzationModel.swift in Sources */,
+				72A9C33B1F8B57FB000FEE5D /* EFTestViewController.swift in Sources */,
+				72A9C3441F8B6FCB000FEE5D /* EFAnalyzeResultModel.swift in Sources */,
 				72D36D9D1F78B09000200200 /* EFGameListViewController.swift in Sources */,
+				721A13EB1F8F69FC00769855 /* EFGameListItemModel.swift in Sources */,
 				72B187CE1F78D2B700021F66 /* EFGameListCellNode.swift in Sources */,
 				72B5AB421F789C4B00B35D7D /* AppDelegate.swift in Sources */,
+				721A13DB1F8CBF4800769855 /* EFExamineTool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,10 +563,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = VJX2856TKC;
+				DEVELOPMENT_TEAM = 9VS2U4JQW8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -519,10 +574,10 @@
 				INFOPLIST_FILE = Eason/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.fun.examine;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ae.sedfh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d43f27de-916e-4a84-9f65-081d474a45d9";
-				PROVISIONING_PROFILE_SPECIFIER = disallinhous20161011;
+				PROVISIONING_PROFILE = "e10eab63-56bb-4a72-a289-d06c79a08f8e";
+				PROVISIONING_PROFILE_SPECIFIER = devsedfh20170613;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/Eason/Eason-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -544,7 +599,7 @@
 				INFOPLIST_FILE = Eason/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.fun.examine;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ae.sedfh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/Eason/Eason-Bridging-Header.h";

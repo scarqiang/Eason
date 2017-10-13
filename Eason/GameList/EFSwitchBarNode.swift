@@ -14,14 +14,15 @@ protocol EFSwitchBarNodeDelegate {
 
 class EFSwitchBarNode: ASDisplayNode, ASCollectionDelegate, ASCollectionDataSource, EFSwitchBarItemDelegate {
     var collectionNode: ASCollectionNode?
-    private let titles = ["最近游戏", "亚欧游戏", "港台游戏", "韩国游戏"]
+    var titles = [String]()
     static let viewHeight: CGFloat = 50.0
     private let itemWidth: CGFloat = 120
     private var lastIndexPath: IndexPath?
     var delegate: EFSwitchBarNodeDelegate?
     
-    override init() {
-        super.init()
+    convenience init(titles:[String]) {
+        self.init()
+        self.titles = titles
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 0;
@@ -32,7 +33,6 @@ class EFSwitchBarNode: ASDisplayNode, ASCollectionDelegate, ASCollectionDataSour
         collectionNode?.delegate = self
         collectionNode?.dataSource = self
         collectionNode?.view.showsHorizontalScrollIndicator = false
-        collectionNode?.backgroundColor = UIColor.yellow
         self.addSubnode(collectionNode!)
     }
     
@@ -75,7 +75,7 @@ class EFSwitchBarNode: ASDisplayNode, ASCollectionDelegate, ASCollectionDataSour
         if delegate != nil {
             let cell = collectionNode?.nodeForItem(at: indexPath) as! EFSwitchBarItemNode
             cell.didTapItemAction(nil)
-            delegate!.barNodeDidTapItem(self, indexPath)
+//            delegate!.barNodeDidTapItem(self, indexPath)
         }
     }
 }
@@ -105,6 +105,7 @@ class EFSwitchBarItemNode: ASCellNode {
     }
     
     override func didLoad() {
+        super.didLoad()
         let tap = UITapGestureRecognizer(target: self, action: #selector(didTapItemAction(_:)))
         titleTextNode.view.addGestureRecognizer(tap)
         titleTextNode.view.isUserInteractionEnabled = true

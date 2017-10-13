@@ -23,6 +23,8 @@ class EFTestViewController: ASViewController<ASDisplayNode>,ASCollectionDelegate
         let backItem = UIBarButtonItem(customView: backButton)
         self.navigationItem.leftBarButtonItem = backItem
         
+        self.automaticallyAdjustsScrollViewInsets = false
+        
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 0;

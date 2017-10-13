@@ -1,0 +1,141 @@
+{
+    resultCrashLog = "crash Reason: Invalid type in JSON write (UIView) ,\nStack: (\n\t0   CoreFoundation                      0x0000000106adbb0b __exceptionPreprocess + 171\n\t1   libobjc.A.dylib                     0x0000000105c38141 objc_exception_throw + 48\n\t2   CoreFoundation                      0x0000000106b44625 +[NSException raise:format:] + 197\n\t3   Foundation                          0x0000000105732462 _writeJSONValue + 679\n\t4   Foundation                          0x0000000105786dcb ___writeJSONObject_block_invoke + 223\n\t5   CoreFoundation                      0x0000000106a6d9ae __65-[__NSDictionaryI enumerateKeysAndObjectsWithOptions:usingBlock:]_block_invoke + 94\n\t6   CoreFoundation                      0x0000000106a6d88f -[__NSDictionaryI enumerateKeysAndObjectsWithOptions:usingBlock:] + 191\n\t7   Foundation                          0x0000000105786bc2 _writeJSONObject + 394\n\t8   Foundation                          0x0000000105732343 _writeJSONValue + 392\n\t9   Foundation                          0x0000000105786dcb ___writeJSONObject_block_invoke + 223\n\t10  CoreFoundation                      0x0000000106b41243 -[__NSSingleEntryDictionaryI enumerateKeysAndObjectsWithOptions:usingBlock:] + 67\n\t11  Foundation                          0x0000000105786bc2 _writeJSONObject + 394\n\t12  Foundation                          0x0000000105732343 _writeJSONValue + 392\n\t13  Foundation                          0x00000001057328a2 ___writeJSONArray_block_invoke + 130\n\t14  CoreFoundation                      0x0000000106b341ba -[__NSSingleObjectArrayI enumerateObjectsWithOptions:usingBlock:] + 58\n\t15  Foundation                          0x00000001057325a3 _writeJSONArray + 317\n\t16  Foundation                          0x00000001057323d3 _writeJSONValue + 536\n\t17  Foundation                          0x0000000105786dcb ___writeJSONObject_block_invoke + 223\n\t18  CoreFoundation                      0x0000000106a6d9ae __65-[__NSDictionaryI enumerateKeysAndObjectsWithOptions:usingBlock:]_block_invoke + 94\n\t19  CoreFoundation                      0x0000000106a6d8ba -[__NSDictionaryI enumerateKeysAndObjectsWithOptions:usingBlock:] + 234\n\t20  Foundation                          0x0000000105786bc2 _writeJSONObject + 394\n\t21  Foundation                          0x0000000105732343 _writeJSONValue + 392\n\t22  Foundation                          0x0000000105732167 -[_NSJSONWriter dataWithRootObject:options:error:] + 124\n\t23  Foundation                          0x000000010573204c +[NSJSONSerialization dataWithJSONObject:options:error:] + 337\n\t24  EfunUniDemo                         0x00000001017ae4c8 __44-[EFExaminer applicationDidEnterBackground:]_block_invoke + 1128\n\t25  libdispatch.dylib                   0x000000010a1124a6 _dispatch_call_block_and_release + 12\n\t26  libdispatch.dylib                   0x000000010a13b05c _dispatch_client_callout + 8\n\t27  libdispatch.dylib                   0x000000010a11d198 _dispatch_root_queue_drain + 1358\n\t28  libdispatch.dylib                   0x000000010a11cbef _dispatch_worker_thread3 + 123\n\t29  libsystem_pthread.dylib             0x000000010a4d25a2 _pthread_wqthread + 1299\n\t30  libsystem_pthread.dylib             0x000000010a4d207d start_wqthread + 13\n);";
+    resultExternalInterface =     (
+                {
+            login =             {
+                baseView = "<UIView: 0x7fc6d0f01680; frame = (0 0; 667 375); autoresize = W+H; layer = <CALayer: 0x608000026440>>";
+                language = "zh-Hant";
+            };
+        },
+                {
+            loginSuccess =             {
+                "EFUN_PRM_USER_ICONURL" = "https://image-download.vsplay.com/pftw/M00/16/15/CgEPelhHqQyADe6iAATWiYHpXUg886_64x64.png";
+                "EFUN_PRM_USER_SEX" = "\U7537";
+                code = 1000;
+                loginState = normal;
+                loginTypeStr = efun;
+                message = "\U767b\U5165\U6210\U529f";
+                sign = 7A697BD81E259F68F9A161CDE3A6CB90;
+                thirdId = "";
+                timestamp = 1506667392009;
+                userid = 545941;
+            };
+        },
+                {
+            trackEvent =             {
+                "efun_prm_child_event" = upgradeRole;
+                "efun_prm_track_type" = "efun_track_event_user_define";
+                remark =                 {
+                    upgradeLocation = "xx\U5c71";
+                };
+                roleID = 1;
+                roleLevel = 1;
+            };
+        }
+    );
+    resultIcloudBackup =     {
+        backup = 0;
+        documentsSize = 136;
+    };
+    resultInfoPlist =     {
+        CFBundleURLTypes =         {
+            facebook =             {
+                item = fb419326445128525;
+                pass = 1;
+            };
+            gameCode =             {
+                item = twtestios;
+                pass = 1;
+            };
+            google =             {
+                item = "com.googleusercontent.apps.683383907097-qep39u94u1ih0gus0o694ti9g8mtcclu";
+                pass = 1;
+            };
+        };
+        LSApplicationQueriesSchemes =         {
+            instagram =             {
+                item = instagram;
+                pass = 1;
+            };
+            line =             {
+                item = line;
+                pass = 1;
+            };
+            twapios =             {
+                item = twapios;
+                pass = 1;
+            };
+            whatsapp =             {
+                item = whatsapp;
+                pass = 1;
+            };
+        };
+        facebook =         {
+            FacebookAppID =             {
+                item = 419326445128525;
+                pass = 1;
+            };
+            FacebookDisplayName =             {
+                item = "SDK DEMO AETEST";
+                pass = 1;
+            };
+            LSApplicationQueriesSchemes =             {
+                "fb-messenger-api" =                 {
+                    item = "fb-messenger-api";
+                    pass = 1;
+                };
+                fbapi =                 {
+                    item = fbapi;
+                    pass = 1;
+                };
+                fbauth2 =                 {
+                    item = fbauth2;
+                    pass = 1;
+                };
+                fbshareextension =                 {
+                    item = fbshareextension;
+                    pass = 1;
+                };
+            };
+        };
+        main =         {
+            CFBundleDevelopmentRegion = en;
+            CFBundleIdentifier = "com.vqw.unitest";
+            CFBundleShortVersionString = "1.0.0";
+            CFBundleVersion = "1.0";
+            DTXcode = 0833;
+            MinimumOSVersion = "8.0";
+            NSAllowsArbitraryLoads = 1;
+            NSCameraUsageDescription = "\U76f4\U64ad\U904e\U7a0b\U4e2d\U53ef\U80fd\U6703\U4f7f\U7528\U5230\U651d\U50cf\U982d\Uff0c\U5c07\U5be6\U6642\U62cd\U651d\U5230\U7684\U666f\U8c61\U6295\U653e\U5230\U756b\U9762\U4e2d\U4e00\U540c\U76f4\U64ad\U3002";
+            NSMicrophoneUsageDescription = "\U76f4\U64ad\U904e\U7a0b\U4e2d\U53ef\U80fd\U6703\U4f7f\U7528\U5230\U9ea5\U514b\U98a8\Uff0c\U5c07\U5be6\U6642\U6536\U9304\U5230\U7684\U8072\U97f3\U4e00\U540c\U76f4\U64ad\U3002";
+            NSPhotoLibraryUsageDescription = "\U8bbf\U95ee\U76f8\U518c";
+        };
+        twitter =         {
+            APIKey =             {
+                item = iatynV34fwgsTrh8kdIrCA4bJ;
+                pass = 1;
+            };
+            KitName =             {
+                item = Twitter;
+                pass = 1;
+            };
+            LSApplicationQueriesSchemes =             {
+                twitter =                 {
+                    item = twitter;
+                    pass = 1;
+                };
+            };
+            consumerKey =             {
+                item = iatynV34fwgsTrh8kdIrCA4bJ;
+                pass = 1;
+            };
+            consumerSecret =             {
+                item = WkP4PoVQ02eEICQiwiytBmAdr4Es2MFKsiQY0Vc8G8LpSLlTiK;
+                pass = 1;
+            };
+        };
+    };
+    resultStoreSupportedLanguage =     (
+        en
+    );
+}

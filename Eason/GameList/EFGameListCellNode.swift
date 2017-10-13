@@ -11,11 +11,11 @@ import YYKit
 
 struct EFGameListCellMarker {
     let iconSize = CGSize.init(width: 80, height: 80)
-    let titleFont = UIFont.systemFont(ofSize: 20);
+    let titleFont = UIFont.systemFont(ofSize: 18);
     let gameCodeFont = UIFont.systemFont(ofSize: 16);
     let descriptionFont = UIFont.systemFont(ofSize: 11);
-    let betweenSpac: CGFloat = 20.0;
-    let insetSpac: CGFloat = 10;
+    let betweenSpac: CGFloat = 15.0;
+    let insetSpac: CGFloat = 20;
 }
 
 final class EFGameListCellNode: ASCellNode {
@@ -24,11 +24,14 @@ final class EFGameListCellNode: ASCellNode {
     let gameCodeTextNode: ASTextNode = ASTextNode()
     let descriptionTextNode: ASTextNode = ASTextNode()
     let marker: EFGameListCellMarker = EFGameListCellMarker()
-    let data = ["XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"]
     
     override init() {
         super.init()
+        titleTextNode.maximumNumberOfLines = 1;
+        titleTextNode.style.flexGrow = 1;
+        
         iconImageNode.backgroundColor = UIColor.gray;
+        iconImageNode.defaultImage = UIImage(named: "defaultEfun.pnge3")
         titleTextNode.attributedText = NSAttributedString(
             string: "Game Name",
             attributes: [
@@ -43,21 +46,38 @@ final class EFGameListCellNode: ASCellNode {
                 NSAttributedStringKey.foregroundColor: UIColor.black
             ])
         
-        let num = arc4random()%3;
-        
-        descriptionTextNode.attributedText = NSAttributedString(
-            string: data[Int(num)],
-            attributes: [
-                NSAttributedStringKey.font: marker.descriptionFont,
-                NSAttributedStringKey.foregroundColor: UIColor.black
-            ])
-        
         descriptionTextNode.maximumNumberOfLines = 0;
         addSubnode(iconImageNode)
         addSubnode(titleTextNode)
         addSubnode(gameCodeTextNode)
         addSubnode(descriptionTextNode)
     }
+    
+    func setupGameData(model: EFGameListItemModel) {
+        titleTextNode.attributedText = NSAttributedString(
+            string: "\(model.game_code_info!.game_name)",
+            attributes: [
+                NSAttributedStringKey.font: marker.titleFont,
+                NSAttributedStringKey.foregroundColor: UIColor.black
+            ])
+        
+        gameCodeTextNode.attributedText = NSAttributedString(
+            string: "\(model.game_code_info!.game_code)",
+            attributes: [
+                NSAttributedStringKey.font: marker.gameCodeFont,
+                NSAttributedStringKey.foregroundColor: UIColor.gray
+            ])
+        
+        descriptionTextNode.attributedText = NSAttributedString(
+            string: model.packaged_date,
+            attributes: [
+                NSAttributedStringKey.font: marker.descriptionFont,
+                NSAttributedStringKey.foregroundColor: UIColor.gray
+            ])
+        let imgURL = URL(string: model.game_code_info!.icon)
+        iconImageNode.setURL(imgURL, resetToDefault: false)
+    }
+    
     
     override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
         iconImageNode.style.preferredSize = marker.iconSize;
@@ -72,9 +92,9 @@ final class EFGameListCellNode: ASCellNode {
         let packSpac =  ASStackLayoutSpec(direction: .horizontal,
                                          spacing: marker.insetSpac,
                                          justifyContent: .start,
-                                         alignItems: .start,
+                                         alignItems: .center,
                                          children: [iconImageNode, textSpac])
         let inset = marker.insetSpac;
-        return ASInsetLayoutSpec(insets: UIEdgeInsetsMake(inset, inset, inset, inset), child: packSpac)
+        return ASInsetLayoutSpec(insets: UIEdgeInsetsMake(inset, inset, inset, inset/2), child: packSpac)
     }
 }

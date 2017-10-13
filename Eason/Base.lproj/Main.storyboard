@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="didClickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LFE-Dd-yui"/>
+                                    <action selector="didClickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EXb-dc-OY7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3c-Tu-SEQ">
@@ -47,7 +47,6 @@
         <!--Navigation Controller-->
         <scene sceneID="IBi-xN-Sxu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="r4k-Ns-YEg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uX4-Qj-aXJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kr1-Id-2fo">
@@ -59,6 +58,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="FIA-b3-Xuk"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r4k-Ns-YEg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="115.2" y="116.94152923538232"/>
         </scene>

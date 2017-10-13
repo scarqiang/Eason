@@ -11,8 +11,14 @@ import UIKit
 class EFGameModuleCellNode: ASCellNode, ASTableDelegate, ASTableDataSource {
     private let tableNode = ASTableNode()
     var barHeight: CGFloat?
-    override init() {
-        super.init()
+    var dataArray = [EFGameListItemModel]()
+    
+    convenience init(listData: [EFGameListItemModel]?) {
+        self.init()
+        
+        if let list = listData {
+            dataArray += list
+        }
         
         barHeight = UIApplication.shared.statusBarFrame.size.height + 44
         tableNode.delegate = self
@@ -34,6 +40,7 @@ class EFGameModuleCellNode: ASCellNode, ASTableDelegate, ASTableDataSource {
     func tableNode(_ tableNode: ASTableNode, nodeForRowAt indexPath: IndexPath) -> ASCellNode {
         
         let node = EFGameListCellNode()
+        node.setupGameData(model: dataArray[indexPath.row])
         return node;
     }
     
@@ -42,6 +49,6 @@ class EFGameModuleCellNode: ASCellNode, ASTableDelegate, ASTableDataSource {
     }
     
     func tableNode(_ tableNode: ASTableNode, numberOfRowsInSection section: Int) -> Int {
-        return 20;
+        return dataArray.count;
     }
 }

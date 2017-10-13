@@ -1,0 +1,11 @@
+framework module ObjectMapperAdditionsRealm {
+  umbrella header "ObjectMapperAdditionsRealm.h"
+
+  export *
+  module * { export * }
+}
+
+module ObjectMapperAdditionsRealm.Swift {
+    header "ObjectMapperAdditionsRealm-Swift.h"
+    requires objc
+}

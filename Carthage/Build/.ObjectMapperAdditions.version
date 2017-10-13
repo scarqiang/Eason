@@ -1,0 +1,13 @@
+{
+  "commitish" : "3.0.6",
+  "iOS" : [
+    {
+      "hash" : "99918872c015eb493c85c4cc9efbd1782d8d8dbfb58aa493c541246bfd7fd162",
+      "name" : "ObjectMapperAdditionsRealm"
+    },
+    {
+      "hash" : "f2167efbc8a30566efdd52bd46a4d15daf737fa49e20295622cf9c3658720188",
+      "name" : "ObjectMapperAdditions"
+    }
+  ]
+}
