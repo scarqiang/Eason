@@ -36,6 +36,8 @@ public class StringObject: Object {
 /// app测试结果model
 class EFAppAnalyzationModel: Object, Mappable {
     
+    @objc dynamic var resultGameCode = ""
+    
     @objc dynamic var timestemp = ""
     /// 奔溃日志
     @objc dynamic var resultCrashLog = ""
@@ -44,7 +46,7 @@ class EFAppAnalyzationModel: Object, Mappable {
     /// api调用信息
     let resultExternalInterface = List<EFResultExternalInterfaceModel>()
     /// .plist文件信息
-    @objc dynamic var resultInfoPlist: EFResultExternalInterfaceModel?
+    @objc dynamic var resultInfoPlist: EFResultInfoPlistModel?
     //语言信息
     let resultStoreSupportedLanguage = List<StringObject>()
     
@@ -56,7 +58,8 @@ class EFAppAnalyzationModel: Object, Mappable {
         resultCrashLog <- map["resultCrashLog"]
         resultIcloudBackup <- map["resultIcloudBackup"]
         resultExternalInterface <- map["resultExternalInterface"]
-        resultInfoPlist <- map["EFResultExternalInterfaceModel"]
+        resultInfoPlist <- map["resultInfoPlist"]
+        resultGameCode <- map["resultGameCode"]
         //解决List不能为String问题
         var resultStoreSupportedLanguage: [String]? = nil
         resultStoreSupportedLanguage <- map["resultStoreSupportedLanguage"] // Maps to local variable
@@ -83,7 +86,7 @@ class EFResultExternalInterfaceModel: Object, Mappable {
     }
     
     func mapping(map: Map) {
-        api <- map["map"]
+        api <- map["api"]
         apiDescription <- map["description"]
         parameters <- map["parameters"]
     }
@@ -99,8 +102,17 @@ class EFResultIcloudBackupModel: Object, Mappable {
     }
     
     func mapping(map: Map) {
-        backup <- map["backup"]
-        documentsSize <- map["documentsSize"]
+        if map.mappingType == .toJSON {
+            var backup = self.backup
+            backup <- map["backup"]
+            
+            var documentsSize = self.documentsSize
+            documentsSize <- map["documentsSize"]
+        }
+        else {
+            backup <- map["backup"]
+            documentsSize <- map["documentsSize"]
+        }
     }
 }
 
@@ -120,11 +132,11 @@ class EFResultInfoPlistModel: Object, Mappable {
     
     func mapping(map: Map) {
         CFBundleURLTypes <- map["CFBundleURLTypes"]
-        CFBundleURLTypes <- map["LSApplicationQueriesSchemes"]
-        CFBundleURLTypes <- map["facebook"]
-        CFBundleURLTypes <- map["kakao"]
-        CFBundleURLTypes <- map["main"]
-        CFBundleURLTypes <- map["twitter"]
+        LSApplicationQueriesSchemes <- map["LSApplicationQueriesSchemes"]
+        facebook <- map["facebook"]
+        kakao <- map["kakao"]
+        main <- map["main"]
+        twitter <- map["twitter"]
     }
 }
 
@@ -144,13 +156,33 @@ class EFCFBundleURLTypesModel: Object, Mappable {
     }
     
     func mapping(map: Map) {
-        facebook <- map["facebook"]
-        gameCode <- map["gameCode"]
-        google <- map["google"]
-        vk <- map["vk"]
-        kakao <- map["kakao"]
-        kakaogame <- map["kakaogame"]
-        weixin <- map["weixin"]
+
+        if map.mappingType == .toJSON {
+            var facebook = self.facebook
+            facebook <- map["facebook"]
+            var gameCode = self.gameCode
+            gameCode <- map["gameCode"]
+            var google = self.google
+            google <- map["google"]
+            var vk = self.vk
+            vk <- map["vk"]
+            var kakao = self.kakao
+            kakao <- map["kakao"]
+            var kakaogame = self.kakaogame
+            kakaogame <- map["kakaogame"]
+            var weixin = self.weixin
+            weixin <- map["weixin"]
+            
+        }
+        else {
+            facebook <- map["facebook"]
+            gameCode <- map["gameCode"]
+            google <- map["google"]
+            vk <- map["vk"]
+            kakao <- map["kakao"]
+            kakaogame <- map["kakaogame"]
+            weixin <- map["weixin"]
+        }
     }
 }
 
@@ -177,17 +209,41 @@ class EFLSApplicationQueriesSchemesModel: Object, Mappable {
     
     func mapping(map: Map) {
         
-        vk <- map["vk"]
-        vk_share <- map["vk-share"]
-        vkauthorize <- map["vkauthorize"]
-        
-        weixin <- map["weixin"]
-        
-        twapios <- map["twapios"]
-        line <- map["line"]
-        whatsapp <- map["whatsapp"]
-        twitter <- map["twitter"]
-        instagram <- map["instagram"]
+        if map.mappingType == .toJSON {
+            var vk = self.vk
+            vk <- map["vk"]
+            var vk_share = self.vk_share
+            vk_share <- map["vk-share"]
+            var vkauthorize = self.vkauthorize
+            vkauthorize <- map["vkauthorize"]
+            
+            var weixin = self.weixin
+            weixin <- map["weixin"]
+            
+            var twapios = self.twapios
+            twapios <- map["twapios"]
+            var line = self.line
+            line <- map["line"]
+            var whatsapp = self.whatsapp
+            whatsapp <- map["whatsapp"]
+            var twitter = self.twitter
+            twitter <- map["twitter"]
+            var instagram = self.instagram
+            instagram <- map["instagram"]
+        }
+        else {
+            vk <- map["vk"]
+            vk_share <- map["vk-share"]
+            vkauthorize <- map["vkauthorize"]
+            
+            weixin <- map["weixin"]
+            
+            twapios <- map["twapios"]
+            line <- map["line"]
+            whatsapp <- map["whatsapp"]
+            twitter <- map["twitter"]
+            instagram <- map["instagram"]
+        }
     }
 }
 
@@ -202,9 +258,20 @@ class EFInfoPlistFacebookModel: Object, Mappable {
     }
     
     func mapping(map: Map) {
-        FacebookAppID <- map["FacebookAppID"]
-        FacebookDisplayName <- map["FacebookDisplayName"]
-        LSApplicationQueriesSchemes <- map["LSApplicationQueriesSchemes"]
+        
+        if map.mappingType == .toJSON {
+            var FacebookAppID = self.FacebookAppID
+            FacebookAppID <- map["FacebookAppID"]
+            var FacebookDisplayName = self.FacebookDisplayName
+            FacebookDisplayName <- map["FacebookDisplayName"]
+            var LSApplicationQueriesSchemes = self.LSApplicationQueriesSchemes
+            LSApplicationQueriesSchemes <- map["LSApplicationQueriesSchemes"]
+        }
+        else {
+            FacebookAppID <- map["FacebookAppID"]
+            FacebookDisplayName <- map["FacebookDisplayName"]
+            LSApplicationQueriesSchemes <- map["LSApplicationQueriesSchemes"]
+        }
     }
 }
 
@@ -220,10 +287,23 @@ class EFInfoPlistFacebookSchemesModel: Object, Mappable {
     }
     
     func mapping(map: Map) {
-        fbapi <- map["fbapi"]
-        fbauth2 <- map["fbauth2"]
-        fb_messenger_api <- map["fb-messenger-api"]
-        fbshareextension <- map["fbshareextension"]
+        
+        if map.mappingType == .toJSON {
+            var fbapi = self.fbapi
+            fbapi <- map["fbapi"]
+            var fbauth2 = self.fbauth2
+            fbauth2 <- map["fbauth2"]
+            var fb_messenger_api = self.fb_messenger_api
+            fb_messenger_api <- map["fb-messenger-api"]
+            var fbshareextension = self.fbshareextension
+            fbshareextension <- map["fbshareextension"]
+        }
+        else {
+            fbapi <- map["fbapi"]
+            fbauth2 <- map["fbauth2"]
+            fb_messenger_api <- map["fb-messenger-api"]
+            fbshareextension <- map["fbshareextension"]
+        }
     }
 }
 
@@ -241,12 +321,29 @@ class EFInfoPlistKakaoModel: Object, Mappable {
     }
     
     func mapping(map: Map) {
-        AppId <- map["AppId"]
-        AppSecret <- map["AppSecret"]
-        AppVersion <- map["AppVersion"]
-        DebugLevel <- map["DebugLevel"]
-        KAKAO_APP_KEY <- map["KAKAO_APP_KEY"]
-        LSApplicationQueriesSchemes <- map["LSApplicationQueriesSchemes"]
+        
+        if map.mappingType == .toJSON {
+            var AppId = self.AppId
+            AppId <- map["AppId"]
+            var AppSecret = self.AppSecret
+            AppSecret <- map["AppSecret"]
+            var AppVersion = self.AppVersion
+            AppVersion <- map["AppVersion"]
+            var DebugLevel = self.DebugLevel
+            DebugLevel <- map["DebugLevel"]
+            var KAKAO_APP_KEY = self.KAKAO_APP_KEY
+            KAKAO_APP_KEY <- map["KAKAO_APP_KEY"]
+            var LSApplicationQueriesSchemes = self.LSApplicationQueriesSchemes
+            LSApplicationQueriesSchemes <- map["LSApplicationQueriesSchemes"]
+        }
+        else {
+            AppId <- map["AppId"]
+            AppSecret <- map["AppSecret"]
+            AppVersion <- map["AppVersion"]
+            DebugLevel <- map["DebugLevel"]
+            KAKAO_APP_KEY <- map["KAKAO_APP_KEY"]
+            LSApplicationQueriesSchemes <- map["LSApplicationQueriesSchemes"]
+        }
     }
 }
 
@@ -264,12 +361,28 @@ class EFInfoPlistKakaoSchemeModel: Object, Mappable {
     }
     
     func mapping(map: Map) {
-        KAKAO_APP_KEY <- map["KAKAO_APP_KEY"]
-        kakaokompassauth <- map["kakaokompassauth"]
-        storykompassauth <- map["storykompassauth"]
-        kakaolink <- map["kakaolink"]
-        kakaotalk <- map["kakaotalk"]
-        kakaostory <- map["kakaostory"]
+        if map.mappingType == .toJSON {
+            var KAKAO_APP_KEY = self.KAKAO_APP_KEY
+            KAKAO_APP_KEY <- map["KAKAO_APP_KEY"]
+            var kakaokompassauth = self.kakaokompassauth
+            kakaokompassauth <- map["kakaokompassauth"]
+            var storykompassauth = self.storykompassauth
+            storykompassauth <- map["storykompassauth"]
+            var kakaolink = self.kakaolink
+            kakaolink <- map["kakaolink"]
+            var kakaotalk = self.kakaotalk
+            kakaotalk <- map["kakaotalk"]
+            var kakaostory = self.kakaostory
+            kakaostory <- map["kakaostory"]
+        }
+        else {
+            KAKAO_APP_KEY <- map["KAKAO_APP_KEY"]
+            kakaokompassauth <- map["kakaokompassauth"]
+            storykompassauth <- map["storykompassauth"]
+            kakaolink <- map["kakaolink"]
+            kakaotalk <- map["kakaotalk"]
+            kakaostory <- map["kakaostory"]
+        }
     }
 }
 
@@ -286,11 +399,26 @@ class EFInfoPlistTitterModel: Object, Mappable {
     }
     
     func mapping(map: Map) {
-        APIKey <- map["APIKey"]
-        KitName <- map["KitName"]
-        LSApplicationQueriesSchemes <- map["LSApplicationQueriesSchemes"]
-        consumerKey <- map["consumerKey"]
-        consumerSecret <- map["consumerSecret"]
+        
+        if map.mappingType == .toJSON {
+            var APIKey = self.APIKey
+            APIKey <- map["APIKey"]
+            var KitName = self.KitName
+            KitName <- map["KitName"]
+            var LSApplicationQueriesSchemes = self.LSApplicationQueriesSchemes
+            LSApplicationQueriesSchemes <- map["LSApplicationQueriesSchemes"]
+            var consumerKey = self.consumerKey
+            consumerKey <- map["consumerKey"]
+            var consumerSecret = self.consumerSecret
+            consumerSecret <- map["consumerSecret"]
+        }
+        else {
+            APIKey <- map["APIKey"]
+            KitName <- map["KitName"]
+            LSApplicationQueriesSchemes <- map["LSApplicationQueriesSchemes"]
+            consumerKey <- map["consumerKey"]
+            consumerSecret <- map["consumerSecret"]
+        }
     }
 }
 
@@ -303,7 +431,13 @@ class EFInfoPlistTitterSchemeModel: Object, Mappable {
     }
     
     func mapping(map: Map) {
-        twitter <- map["twitter"]
+        if map.mappingType == .toJSON {
+            var twitter = self.twitter
+            twitter <- map["twitter"]
+        }
+        else {
+            twitter <- map["twitter"]
+        }
     }
 }
 
@@ -325,16 +459,41 @@ class EFInfoPlistMainModel: Object, Mappable {
     }
     
     func mapping(map: Map) {
-        CFBundleDevelopmentRegion <- map["CFBundleDevelopmentRegion"]
-        CFBundleIdentifier <- map["CFBundleIdentifier"]
-        CFBundleShortVersionString <- map["CFBundleShortVersionString"]
-        CFBundleVersion <- map["CFBundleVersion"]
-        DTXcode <- map["DTXcode"]
-        MinimumOSVersion <- map["MinimumOSVersion"]
-        NSAllowsArbitraryLoads <- map["NSAllowsArbitraryLoads"]
-        NSCameraUsageDescription <- map["NSCameraUsageDescription"]
-        NSMicrophoneUsageDescription <- map["NSMicrophoneUsageDescription"]
-        NSPhotoLibraryUsageDescription <- map["NSPhotoLibraryUsageDescription"]
+        
+        if map.mappingType == .toJSON {
+            var CFBundleDevelopmentRegion = self.CFBundleDevelopmentRegion
+            CFBundleDevelopmentRegion <- map["CFBundleDevelopmentRegion"]
+            var CFBundleIdentifier = self.CFBundleIdentifier
+            CFBundleIdentifier <- map["CFBundleIdentifier"]
+            var CFBundleShortVersionString = self.CFBundleShortVersionString
+            CFBundleShortVersionString <- map["CFBundleShortVersionString"]
+            var CFBundleVersion = self.CFBundleVersion
+            CFBundleVersion <- map["CFBundleVersion"]
+            var DTXcode = self.DTXcode
+            DTXcode <- map["DTXcode"]
+            var MinimumOSVersion = self.MinimumOSVersion
+            MinimumOSVersion <- map["MinimumOSVersion"]
+            var NSAllowsArbitraryLoads = self.NSAllowsArbitraryLoads
+            NSAllowsArbitraryLoads <- map["NSAllowsArbitraryLoads"]
+            var NSCameraUsageDescription = self.NSCameraUsageDescription
+            NSCameraUsageDescription <- map["NSCameraUsageDescription"]
+            var NSMicrophoneUsageDescription = self.NSMicrophoneUsageDescription
+            NSMicrophoneUsageDescription <- map["NSMicrophoneUsageDescription"]
+            var NSPhotoLibraryUsageDescription = self.NSPhotoLibraryUsageDescription
+            NSPhotoLibraryUsageDescription <- map["NSPhotoLibraryUsageDescription"]
+        }
+        else {
+            CFBundleDevelopmentRegion <- map["CFBundleDevelopmentRegion"]
+            CFBundleIdentifier <- map["CFBundleIdentifier"]
+            CFBundleShortVersionString <- map["CFBundleShortVersionString"]
+            CFBundleVersion <- map["CFBundleVersion"]
+            DTXcode <- map["DTXcode"]
+            MinimumOSVersion <- map["MinimumOSVersion"]
+            NSAllowsArbitraryLoads <- map["NSAllowsArbitraryLoads"]
+            NSCameraUsageDescription <- map["NSCameraUsageDescription"]
+            NSMicrophoneUsageDescription <- map["NSMicrophoneUsageDescription"]
+            NSPhotoLibraryUsageDescription <- map["NSPhotoLibraryUsageDescription"]
+        }
     }
 }
 
@@ -348,7 +507,16 @@ class EFAnalyzationResultItemModel: Object, Mappable {
     }
     
     func mapping(map: Map) {
-        item <- map["item"]
-        pass <- map["pass"]
+
+        if map.mappingType == .toJSON {
+            var item = self.item
+            item <- map["item"]
+            var pass = self.pass
+            pass <- map["pass"]
+        }
+        else {
+            item <- map["item"]
+            pass <- map["pass"]
+        }
     }
 }

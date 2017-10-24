@@ -1,24 +1,24 @@
 {
-  "iOS" : [
+  "Mac" : [
     {
-      "hash" : "82e7dd4201362cee3a3e717b1b3e59ad90630fc5bb7b22b9c04072195d362b96",
-      "name" : "PINCache"
+      "name" : "PINCache",
+      "hash" : "561591af91da0e56c88994bd57c6cfaa809cf13e0359ff978b9e1f55284597db"
     }
   ],
-  "commitish" : "3.0.1-beta.2",
   "watchOS" : [
 
   ],
   "tvOS" : [
     {
-      "hash" : "e108220abdf9aef72f55a51024af3e2c7198be552f051cdc9292cbc10c8962c5",
-      "name" : "PINCache"
+      "name" : "PINCache",
+      "hash" : "e108220abdf9aef72f55a51024af3e2c7198be552f051cdc9292cbc10c8962c5"
     }
   ],
-  "Mac" : [
+  "commitish" : "3.0.1-beta.2",
+  "iOS" : [
     {
-      "hash" : "561591af91da0e56c88994bd57c6cfaa809cf13e0359ff978b9e1f55284597db",
-      "name" : "PINCache"
+      "name" : "PINCache",
+      "hash" : "82e7dd4201362cee3a3e717b1b3e59ad90630fc5bb7b22b9c04072195d362b96"
     }
   ]
 }

@@ -34,6 +34,14 @@
                                     <action selector="presentToTestVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JgC-gC-jk0"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3N-Bi-fij">
+                                <rect key="frame" x="164" y="439" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Net"/>
+                                <connections>
+                                    <action selector="testNetMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JEi-PE-qNE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

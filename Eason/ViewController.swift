@@ -103,5 +103,11 @@ class ViewController: UIViewController {
 //        }
         
     }
+    
+    @IBAction func testNetMode(_ sender: Any) {
+        
+        EFExamineTool.taggerNetworkMode(gameCode: "krtestios")
+    }
+    
 }
 

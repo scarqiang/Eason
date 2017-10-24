@@ -3,4 +3,8 @@ github "facebook/AsyncDisplayKit"
 github "ibireme/YYKit"
 github "realm/realm-cocoa"
 github "Hearst-DD/ObjectMapper" ~> 2.2
-github "tristanhimmelman/AlamofireObjectMapper" ~> 5.0
+github "ninjaprox/NVActivityIndicatorView"
+github "dzenbot/DZNEmptyDataSet"
+github "yoavlt/LiquidFloatingActionButton" "master"
+github "raulriera/TextFieldEffects"
+github "SnapKit/SnapKit" ~> 4.0.0

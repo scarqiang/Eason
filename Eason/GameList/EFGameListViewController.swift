@@ -10,7 +10,8 @@ import UIKit
 import Alamofire
 import RealmSwift
 
-final class EFGameListViewController: ASViewController<ASDisplayNode>, ASTableDataSource, ASTableDelegate, ASCollectionDelegate, ASCollectionDataSource, EFSwitchBarNodeDelegate {
+
+final class EFGameListViewController: ASViewController<ASDisplayNode>, ASTableDataSource, ASTableDelegate, ASCollectionDelegate, ASCollectionDataSource, EFSwitchBarNodeDelegate, EFGameModuleCellNodeDeleage {
 
     enum EFGameListType: String {
         case recent = "最近游戏"
@@ -44,6 +45,7 @@ final class EFGameListViewController: ASViewController<ASDisplayNode>, ASTableDa
     
     init() {
         super.init(node: rootNode)
+        self.title = "游戏列表"
         rootNode.backgroundColor = UIColor.white
     }
     
@@ -57,14 +59,9 @@ final class EFGameListViewController: ASViewController<ASDisplayNode>, ASTableDa
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 70, height: 32))
         imageView.image = #imageLiteral(resourceName: "logo")
         self.navigationItem.titleView = imageView
-        let backButton = UIButton(type: .custom)
-        backButton.frame = CGRect(x: 0, y: 0, width: 80, height: 35)
-        backButton.setTitle("Back", for: .normal)
-        backButton.setTitleColor(UIColor.blue, for: .normal)
-        backButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
-        let backItem = UIBarButtonItem(customView: backButton)
-        self.navigationItem.leftBarButtonItem = backItem
         
+        self.setupSearchButton()
+
         //若不加上这句iOS10以下，少于64的collectionview就会显示不出cell
         self.automaticallyAdjustsScrollViewInsets = false
         
@@ -75,8 +72,8 @@ final class EFGameListViewController: ASViewController<ASDisplayNode>, ASTableDa
         
         let barHeight = UIApplication.shared.statusBarFrame.size.height + (self.navigationController?.navigationBar.frame.height)!
         topBar = EFSwitchBarNode(titles: titles)
-        topBar!.delegate = self
         topBar!.frame = CGRect(x: 0, y: barHeight, width: self.view.size.width, height: EFSwitchBarNode.viewHeight)
+        topBar!.delegate = self
         self.node.addSubnode(topBar!)
         
         let collectionViewLayout = UICollectionViewFlowLayout()
@@ -90,6 +87,12 @@ final class EFGameListViewController: ASViewController<ASDisplayNode>, ASTableDa
         collectionNode?.dataSource = self;
         collectionNode?.view.isPagingEnabled = true
         node.addSubnode(collectionNode!)
+        
+        if EFUserInfo.isLogin() == false {
+            let loginVC = EFLoginViewController()
+            self.present(loginVC, animated: false, completion: nil)
+        }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -97,43 +100,86 @@ final class EFGameListViewController: ASViewController<ASDisplayNode>, ASTableDa
         self.setupDisplayItem(selectIndex)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        EFExamineTool.loadingView.stopAnimating()
+    }
+    
     private func setupDisplayItem(_ index: Int) {
         let indexPath = IndexPath(row: index, section: 0)
         collectionNode?.scrollToItem(at: indexPath, at: .left, animated: false)
         topBar!.scrollToItem(indexPath: indexPath)
-//        self.reloadCollectionNode(indexPath: indexPath)
     }
     
-    @objc func goBack() {
-        self.dismiss(animated: true, completion: nil)
+    @objc func pushSettingVC() {
+        let vc = EFSettingViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    func setupSearchButton() {
+        let button = UIButton(type: .custom)
+        button.setBackgroundImage(#imageLiteral(resourceName: "search-icon-blue"), for: .normal)
+        button.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+        button.addTarget(self, action: #selector(self.pushSearchViewController), for: .touchUpInside)
+        let searchItem = UIBarButtonItem(customView: button)
+        let specItem = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        specItem.width = -10
+        self.navigationItem.rightBarButtonItems = [searchItem, specItem]
+        
+        let settingBtn = UIButton(type: .custom)
+        settingBtn.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+        settingBtn.setBackgroundImage(#imageLiteral(resourceName: "gear"), for: .normal)
+        settingBtn.addTarget(self, action: #selector(self.pushSettingVC), for: .touchUpInside)
+        let settingItem = UIBarButtonItem(customView: settingBtn)
+        let specItem2 = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        specItem.width = 10
+        self.navigationItem.leftBarButtonItems = [settingItem, specItem2]
+    }
+    
+    @objc func pushSearchViewController() {
+        let vc = EFSearchGameViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    /// 通过indexPath位置刷新collection node item
+    ///
+    /// - Parameter indexPath: 目标位置
     func reloadCollectionNode(indexPath: IndexPath?) {
-        if indexPath!.row == 0 {
-            //获取本地最近游戏数据
-            DispatchQueue.global().async {
-                let realm = try! Realm()
-                let recentList = realm.objects(EFRecentGameListModel.self)
-                if let data = recentList.first {
-                    let arr = Array(data.recentGameList)
-                    self.synchronized(lock: self.dataArray, closure: {
-                        self.dataArray[0] = arr
-                    })
-                    DispatchQueue.main.async {
-                        self.reloadCollectionNode(indexPath: indexPath)
-                    }
-                }
-            }
-            return
-        }
         
         if self.dataArray[indexPath!.row].count != 0 {
             return
         }
         
-        self.fetchGameListData(index: indexPath!.row) { (listData) in
+        if indexPath!.row == 0 {
+            //获取本地最近游戏数据
+            EFExamineTool.loadingView.startAnimating()
+            EFExamineTool.queue.sync { [weak self] in
+                let realm = try! Realm()
+                let recentList = realm.objects(EFRecentGameListModel.self)
+                if let data = recentList.first {
+                    let arr = Array(data.recentGameList)
+                    self!.synchronized(lock: self!.dataArray, closure: {
+                        self!.dataArray[0] = arr
+                    })
+                    DispatchQueue.main.async {
+                        self!.collectionNode?.reloadItems(at: [indexPath!])
+                        EFExamineTool.loadingView.stopAnimating()
+                    }
+                }
+                else {
+                    EFExamineTool.loadingView.stopAnimating()
+                }
+            }
+            return
+        }
+        
+        EFExamineTool.loadingView.startAnimating()
+        self.fetchGameListData(index: indexPath!.row) { (listData, error) in
+            EFExamineTool.loadingView.stopAnimating()
             if listData != nil {
-                self.dataArray[indexPath!.row] = listData!
+                self.synchronized(lock: self.dataArray, closure: {
+                  self.dataArray[indexPath!.row] = listData!
+                })
                 self.collectionNode?.reloadItems(at: [indexPath!])
             }
         }
@@ -147,7 +193,7 @@ final class EFGameListViewController: ASViewController<ASDisplayNode>, ASTableDa
     }
     
     //MARK: Networking 获取各个地区游戏数据
-    func fetchGameListData(index: Int, completion:@escaping (_ response:[EFGameListItemModel]?)->Void) {
+    func fetchGameListData(index: Int, completion:@escaping (_ response:[EFGameListItemModel]?,_ error: Error?)->Void) {
         let type = EFGameListType.allValues[index]
         var area = EFGameArea.sea
         switch type {
@@ -158,12 +204,12 @@ final class EFGameListViewController: ASViewController<ASDisplayNode>, ASTableDa
         case .kr:
             area = .kr
         default:
-            completion(nil)
+            completion(nil, nil)
             return
         }
         
-        EFNetworking.shared.fetchGameList(area: area) { (response) in
-            completion(response)
+        EFNetworking.shared.fetchGameList(area: area) { (response, error) in
+            completion(response, error)
         }
     }
     
@@ -174,7 +220,7 @@ final class EFGameListViewController: ASViewController<ASDisplayNode>, ASTableDa
     
     func collectionNode(_ collectionNode: ASCollectionNode, nodeForItemAt indexPath: IndexPath) -> ASCellNode {
         let listData = self.dataArray[indexPath.row]
-        return EFGameModuleCellNode(listData: listData)
+        return EFGameModuleCellNode(listData: listData, delegate: self)
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -194,4 +240,17 @@ final class EFGameListViewController: ASViewController<ASDisplayNode>, ASTableDa
         
         self.reloadCollectionNode(indexPath: indexPath)
     }
+    
+    //MARK: EFGameModuleCellNodeDeleage
+    func didSelectGameModuleCell(model: EFGameListItemModel) {
+//        let gameCode = model.game_code_info?.game_code
+        let vc = EFAnalyzationDataListViewController(gameCode: "krtestios", gameName: model.game_code_info!.game_name)
+        self.navigationController?.pushViewController(vc, animated: true)
+        EFExamineTool.saveRecentGamesData(model: model)
+    }
+    
+    func didClickReloadButton(indexPath: IndexPath) {
+        self.reloadCollectionNode(indexPath: indexPath)
+    }
+    
 }

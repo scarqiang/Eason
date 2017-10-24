@@ -1,0 +1,9 @@
+{
+  "commitish" : "16d775906a385a552b378a592f189ca424a73d7a",
+  "iOS" : [
+    {
+      "name" : "LiquidFloatingActionButton",
+      "hash" : "d504e21e3150e0288f5fd79bc8a2db8c7e5ced6363fc54e634033fed9b131341"
+    }
+  ]
+}

@@ -2,8 +2,8 @@
   "commitish" : "1.0.9",
   "iOS" : [
     {
-      "hash" : "630e8a86c851eeaf6e9788059370ee5a6a51b8f1f83074e76fdd37ba1572f138",
-      "name" : "YYKit"
+      "name" : "YYKit",
+      "hash" : "10abc9d8b51e0701a0afe10c277ce11899377ca8356d6e0b2567683465b835aa"
     }
   ]
 }

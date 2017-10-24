@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7204C6521F9D91CD002BD036 /* DZNEmptyDataSet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7204C6511F9D91CC002BD036 /* DZNEmptyDataSet.framework */; };
+		7204C6541F9DC70C002BD036 /* LiquidFloatingActionButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7204C6531F9DC70C002BD036 /* LiquidFloatingActionButton.framework */; };
+		721913451F98741E00ADB028 /* EFLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721913441F98741E00ADB028 /* EFLanguageViewController.swift */; };
+		721913471F98808000ADB028 /* EFLanguageCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721913461F98808000ADB028 /* EFLanguageCellNode.swift */; };
+		7219134E1F98AFCE00ADB028 /* EFNetworkDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7219134D1F98AFCE00ADB028 /* EFNetworkDataModel.swift */; };
 		721A13D81F8C9DE900769855 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 721A13D71F8C9DE800769855 /* Realm.framework */; };
 		721A13DB1F8CBF4800769855 /* EFExamineTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721A13DA1F8CBF4800769855 /* EFExamineTool.swift */; };
 		721A13DD1F8DB82200769855 /* EFAppAnalyzationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721A13DC1F8DB82200769855 /* EFAppAnalyzationModel.swift */; };
@@ -14,10 +19,22 @@
 		721A13ED1F8F737100769855 /* EFNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721A13EC1F8F737100769855 /* EFNetworking.swift */; };
 		72209BCE1F8F98BC008C50B9 /* AlamofireObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72209BCD1F8F98BB008C50B9 /* AlamofireObjectMapper.swift */; };
 		722AB58D1F7CC9A400B73C6B /* EFGameModuleCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722AB58C1F7CC9A400B73C6B /* EFGameModuleCellNode.swift */; };
+		7234B87C1F97495200F31218 /* EFPlistFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7234B87B1F97495200F31218 /* EFPlistFileViewController.swift */; };
+		7234B87E1F974ED500F31218 /* EFPlistFileItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7234B87D1F974ED400F31218 /* EFPlistFileItemViewController.swift */; };
+		7237269B1F97817B00091769 /* EFPlistMainInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7237269A1F97817B00091769 /* EFPlistMainInfoViewController.swift */; };
+		7237269D1F97895100091769 /* EFPlistMainCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7237269C1F97895100091769 /* EFPlistMainCellNode.swift */; };
+		7237269F1F983FA000091769 /* EFAPIDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7237269E1F983FA000091769 /* EFAPIDataViewController.swift */; };
+		723726A11F9841B600091769 /* EFAPIDataCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723726A01F9841B600091769 /* EFAPIDataCellNode.swift */; };
+		72A03BF41F9F494C0012467D /* EFSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A03BF31F9F494C0012467D /* EFSettingViewController.swift */; };
+		72A03BF61F9F49F50012467D /* EFSettingCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A03BF51F9F49F50012467D /* EFSettingCellNode.swift */; };
+		72A2EDFD1F963F3100093C29 /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A2EDFC1F963F2F00093C29 /* NVActivityIndicatorView.framework */; };
+		72A2EE071F97202000093C29 /* EFAnalyzationDataListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A2EE041F97202000093C29 /* EFAnalyzationDataListViewController.swift */; };
+		72A2EE081F97202000093C29 /* EFTestLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A2EE051F97202000093C29 /* EFTestLogViewController.swift */; };
+		72A2EE091F97202000093C29 /* EFTestTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A2EE061F97202000093C29 /* EFTestTypeViewController.swift */; };
+		72A2EE0D1F972D9400093C29 /* EFPlistItemCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A2EE0C1F972D9400093C29 /* EFPlistItemCellNode.swift */; };
 		72A9C33B1F8B57FB000FEE5D /* EFTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A9C33A1F8B57FB000FEE5D /* EFTestViewController.swift */; };
 		72A9C33E1F8B6B32000FEE5D /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A9C33C1F8B6B31000FEE5D /* ObjectMapper.framework */; };
 		72A9C33F1F8B6B32000FEE5D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A9C33D1F8B6B32000FEE5D /* RealmSwift.framework */; };
-		72A9C3441F8B6FCB000FEE5D /* EFAnalyzeResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A9C3431F8B6FCB000FEE5D /* EFAnalyzeResultModel.swift */; };
 		72B187CE1F78D2B700021F66 /* EFGameListCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B187CD1F78D2B700021F66 /* EFGameListCellNode.swift */; };
 		72B187D01F78DFF800021F66 /* YYKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B187CF1F78DFF800021F66 /* YYKit.framework */; };
 		72B500061F78A4DF00DFEA50 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B500051F78A4DF00DFEA50 /* Alamofire.framework */; };
@@ -31,6 +48,13 @@
 		72B5AB4C1F789C4B00B35D7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72B5AB4A1F789C4B00B35D7D /* LaunchScreen.storyboard */; };
 		72B5AB571F789C4B00B35D7D /* EasonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B5AB561F789C4B00B35D7D /* EasonTests.swift */; };
 		72B5AB621F789C4B00B35D7D /* EasonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B5AB611F789C4B00B35D7D /* EasonUITests.swift */; };
+		72BFA0D51F99DCE9004B3B26 /* EFSearchGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BFA0D41F99DCE9004B3B26 /* EFSearchGameViewController.swift */; };
+		72BFA0D71F99E5F4004B3B26 /* EFSearchBarNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BFA0D61F99E5F4004B3B26 /* EFSearchBarNode.swift */; };
+		72C1A45B1F9DEC0800AFFA90 /* EFLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C1A45A1F9DEC0800AFFA90 /* EFLoginViewController.swift */; };
+		72C1A45E1F9DEC4300AFFA90 /* TextFieldEffects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72C1A45C1F9DEC4200AFFA90 /* TextFieldEffects.framework */; };
+		72C1A45F1F9DEC4300AFFA90 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72C1A45D1F9DEC4200AFFA90 /* SnapKit.framework */; };
+		72C7B4C51F98C0D3004F9488 /* EFNetworkDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C7B4C41F98C0D3004F9488 /* EFNetworkDataViewController.swift */; };
+		72C7B4C71F98C698004F9488 /* EFNetworkCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C7B4C61F98C698004F9488 /* EFNetworkCellNode.swift */; };
 		72C808981F7DE3D5002DB148 /* EFSwitchBarNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C808971F7DE3D5002DB148 /* EFSwitchBarNode.swift */; };
 		72D36D9D1F78B09000200200 /* EFGameListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D36D9C1F78B09000200200 /* EFGameListViewController.swift */; };
 /* End PBXBuildFile section */
@@ -53,6 +77,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7204C6511F9D91CC002BD036 /* DZNEmptyDataSet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DZNEmptyDataSet.framework; path = Carthage/Build/iOS/DZNEmptyDataSet.framework; sourceTree = "<group>"; };
+		7204C6531F9DC70C002BD036 /* LiquidFloatingActionButton.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LiquidFloatingActionButton.framework; path = Carthage/Build/iOS/LiquidFloatingActionButton.framework; sourceTree = "<group>"; };
+		721913441F98741E00ADB028 /* EFLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFLanguageViewController.swift; sourceTree = "<group>"; };
+		721913461F98808000ADB028 /* EFLanguageCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFLanguageCellNode.swift; sourceTree = "<group>"; };
+		7219134D1F98AFCE00ADB028 /* EFNetworkDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFNetworkDataModel.swift; sourceTree = "<group>"; };
 		721A13D71F8C9DE800769855 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		721A13DA1F8CBF4800769855 /* EFExamineTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFExamineTool.swift; sourceTree = "<group>"; };
 		721A13DC1F8DB82200769855 /* EFAppAnalyzationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFAppAnalyzationModel.swift; sourceTree = "<group>"; };
@@ -60,10 +89,22 @@
 		721A13EC1F8F737100769855 /* EFNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFNetworking.swift; sourceTree = "<group>"; };
 		72209BCD1F8F98BB008C50B9 /* AlamofireObjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireObjectMapper.swift; sourceTree = "<group>"; };
 		722AB58C1F7CC9A400B73C6B /* EFGameModuleCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFGameModuleCellNode.swift; sourceTree = "<group>"; };
+		7234B87B1F97495200F31218 /* EFPlistFileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFPlistFileViewController.swift; sourceTree = "<group>"; };
+		7234B87D1F974ED400F31218 /* EFPlistFileItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFPlistFileItemViewController.swift; sourceTree = "<group>"; };
+		7237269A1F97817B00091769 /* EFPlistMainInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFPlistMainInfoViewController.swift; sourceTree = "<group>"; };
+		7237269C1F97895100091769 /* EFPlistMainCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFPlistMainCellNode.swift; sourceTree = "<group>"; };
+		7237269E1F983FA000091769 /* EFAPIDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFAPIDataViewController.swift; sourceTree = "<group>"; };
+		723726A01F9841B600091769 /* EFAPIDataCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFAPIDataCellNode.swift; sourceTree = "<group>"; };
+		72A03BF31F9F494C0012467D /* EFSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFSettingViewController.swift; sourceTree = "<group>"; };
+		72A03BF51F9F49F50012467D /* EFSettingCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFSettingCellNode.swift; sourceTree = "<group>"; };
+		72A2EDFC1F963F2F00093C29 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorView.framework; path = Carthage/Build/iOS/NVActivityIndicatorView.framework; sourceTree = "<group>"; };
+		72A2EE041F97202000093C29 /* EFAnalyzationDataListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFAnalyzationDataListViewController.swift; sourceTree = "<group>"; };
+		72A2EE051F97202000093C29 /* EFTestLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFTestLogViewController.swift; sourceTree = "<group>"; };
+		72A2EE061F97202000093C29 /* EFTestTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFTestTypeViewController.swift; sourceTree = "<group>"; };
+		72A2EE0C1F972D9400093C29 /* EFPlistItemCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFPlistItemCellNode.swift; sourceTree = "<group>"; };
 		72A9C33A1F8B57FB000FEE5D /* EFTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFTestViewController.swift; sourceTree = "<group>"; };
 		72A9C33C1F8B6B31000FEE5D /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		72A9C33D1F8B6B32000FEE5D /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
-		72A9C3431F8B6FCB000FEE5D /* EFAnalyzeResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFAnalyzeResultModel.swift; sourceTree = "<group>"; };
 		72B187CD1F78D2B700021F66 /* EFGameListCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFGameListCellNode.swift; sourceTree = "<group>"; };
 		72B187CF1F78DFF800021F66 /* YYKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YYKit.framework; path = Carthage/Build/iOS/YYKit.framework; sourceTree = "<group>"; };
 		72B500031F78A4B700DFEA50 /* Eason-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Eason-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -84,6 +125,13 @@
 		72B5AB5D1F789C4B00B35D7D /* EasonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72B5AB611F789C4B00B35D7D /* EasonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasonUITests.swift; sourceTree = "<group>"; };
 		72B5AB631F789C4B00B35D7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72BFA0D41F99DCE9004B3B26 /* EFSearchGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFSearchGameViewController.swift; sourceTree = "<group>"; };
+		72BFA0D61F99E5F4004B3B26 /* EFSearchBarNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFSearchBarNode.swift; sourceTree = "<group>"; };
+		72C1A45A1F9DEC0800AFFA90 /* EFLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFLoginViewController.swift; sourceTree = "<group>"; };
+		72C1A45C1F9DEC4200AFFA90 /* TextFieldEffects.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TextFieldEffects.framework; path = Carthage/Build/iOS/TextFieldEffects.framework; sourceTree = "<group>"; };
+		72C1A45D1F9DEC4200AFFA90 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		72C7B4C41F98C0D3004F9488 /* EFNetworkDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFNetworkDataViewController.swift; sourceTree = "<group>"; };
+		72C7B4C61F98C698004F9488 /* EFNetworkCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFNetworkCellNode.swift; sourceTree = "<group>"; };
 		72C808971F7DE3D5002DB148 /* EFSwitchBarNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFSwitchBarNode.swift; sourceTree = "<group>"; };
 		72D36D9C1F78B09000200200 /* EFGameListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFGameListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,6 +141,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72C1A45E1F9DEC4300AFFA90 /* TextFieldEffects.framework in Frameworks */,
+				72C1A45F1F9DEC4300AFFA90 /* SnapKit.framework in Frameworks */,
+				7204C6541F9DC70C002BD036 /* LiquidFloatingActionButton.framework in Frameworks */,
+				7204C6521F9D91CD002BD036 /* DZNEmptyDataSet.framework in Frameworks */,
+				72A2EDFD1F963F3100093C29 /* NVActivityIndicatorView.framework in Frameworks */,
 				721A13D81F8C9DE900769855 /* Realm.framework in Frameworks */,
 				72A9C33E1F8B6B32000FEE5D /* ObjectMapper.framework in Frameworks */,
 				72A9C33F1F8B6B32000FEE5D /* RealmSwift.framework in Frameworks */,
@@ -131,12 +184,53 @@
 			path = Tool;
 			sourceTree = "<group>";
 		};
+		72A2EE031F97202000093C29 /* AppsTestDataList */ = {
+			isa = PBXGroup;
+			children = (
+				72A2EE0B1F97206200093C29 /* View */,
+				72A2EE041F97202000093C29 /* EFAnalyzationDataListViewController.swift */,
+				72A2EE061F97202000093C29 /* EFTestTypeViewController.swift */,
+				72A2EE051F97202000093C29 /* EFTestLogViewController.swift */,
+				7234B87B1F97495200F31218 /* EFPlistFileViewController.swift */,
+				7234B87D1F974ED400F31218 /* EFPlistFileItemViewController.swift */,
+				7237269A1F97817B00091769 /* EFPlistMainInfoViewController.swift */,
+				7237269E1F983FA000091769 /* EFAPIDataViewController.swift */,
+				721913441F98741E00ADB028 /* EFLanguageViewController.swift */,
+				72C7B4C41F98C0D3004F9488 /* EFNetworkDataViewController.swift */,
+			);
+			path = AppsTestDataList;
+			sourceTree = "<group>";
+		};
+		72A2EE0A1F97204100093C29 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				722AB58C1F7CC9A400B73C6B /* EFGameModuleCellNode.swift */,
+				72B187CD1F78D2B700021F66 /* EFGameListCellNode.swift */,
+				72C808971F7DE3D5002DB148 /* EFSwitchBarNode.swift */,
+				72BFA0D61F99E5F4004B3B26 /* EFSearchBarNode.swift */,
+				72A03BF51F9F49F50012467D /* EFSettingCellNode.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		72A2EE0B1F97206200093C29 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				72A2EE0C1F972D9400093C29 /* EFPlistItemCellNode.swift */,
+				7237269C1F97895100091769 /* EFPlistMainCellNode.swift */,
+				723726A01F9841B600091769 /* EFAPIDataCellNode.swift */,
+				721913461F98808000ADB028 /* EFLanguageCellNode.swift */,
+				72C7B4C61F98C698004F9488 /* EFNetworkCellNode.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		72A9C3401F8B6C23000FEE5D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				72A9C3431F8B6FCB000FEE5D /* EFAnalyzeResultModel.swift */,
 				721A13DC1F8DB82200769855 /* EFAppAnalyzationModel.swift */,
 				721A13EA1F8F69FC00769855 /* EFGameListItemModel.swift */,
+				7219134D1F98AFCE00ADB028 /* EFNetworkDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -144,6 +238,11 @@
 		72B500041F78A4DE00DFEA50 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				72C1A45D1F9DEC4200AFFA90 /* SnapKit.framework */,
+				72C1A45C1F9DEC4200AFFA90 /* TextFieldEffects.framework */,
+				7204C6531F9DC70C002BD036 /* LiquidFloatingActionButton.framework */,
+				7204C6511F9D91CC002BD036 /* DZNEmptyDataSet.framework */,
+				72A2EDFC1F963F2F00093C29 /* NVActivityIndicatorView.framework */,
 				721A13D71F8C9DE800769855 /* Realm.framework */,
 				72A9C33C1F8B6B31000FEE5D /* ObjectMapper.framework */,
 				72A9C33D1F8B6B32000FEE5D /* RealmSwift.framework */,
@@ -159,11 +258,12 @@
 		72B5000E1F78AE8100DFEA50 /* GameList */ = {
 			isa = PBXGroup;
 			children = (
+				72A2EE0A1F97204100093C29 /* View */,
 				72A9C33A1F8B57FB000FEE5D /* EFTestViewController.swift */,
 				72D36D9C1F78B09000200200 /* EFGameListViewController.swift */,
-				72B187CD1F78D2B700021F66 /* EFGameListCellNode.swift */,
-				722AB58C1F7CC9A400B73C6B /* EFGameModuleCellNode.swift */,
-				72C808971F7DE3D5002DB148 /* EFSwitchBarNode.swift */,
+				72BFA0D41F99DCE9004B3B26 /* EFSearchGameViewController.swift */,
+				72C1A45A1F9DEC0800AFFA90 /* EFLoginViewController.swift */,
+				72A03BF31F9F494C0012467D /* EFSettingViewController.swift */,
 			);
 			path = GameList;
 			sourceTree = "<group>";
@@ -195,6 +295,7 @@
 				721A13D91F8CBEBF00769855 /* Tool */,
 				72A9C3401F8B6C23000FEE5D /* Model */,
 				72B5000E1F78AE8100DFEA50 /* GameList */,
+				72A2EE031F97202000093C29 /* AppsTestDataList */,
 				72B5AB411F789C4B00B35D7D /* AppDelegate.swift */,
 				72B5AB431F789C4B00B35D7D /* ViewController.swift */,
 				72B5AB451F789C4B00B35D7D /* Main.storyboard */,
@@ -370,6 +471,11 @@
 				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/NVActivityIndicatorView.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/DZNEmptyDataSet.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/LiquidFloatingActionButton.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/TextFieldEffects.framework",
 			);
 			name = "Carthage Run Script";
 			outputPaths = (
@@ -386,18 +492,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				721A13ED1F8F737100769855 /* EFNetworking.swift in Sources */,
+				72A03BF61F9F49F50012467D /* EFSettingCellNode.swift in Sources */,
 				72B5AB441F789C4B00B35D7D /* ViewController.swift in Sources */,
 				722AB58D1F7CC9A400B73C6B /* EFGameModuleCellNode.swift in Sources */,
+				72C1A45B1F9DEC0800AFFA90 /* EFLoginViewController.swift in Sources */,
+				72C7B4C51F98C0D3004F9488 /* EFNetworkDataViewController.swift in Sources */,
 				72209BCE1F8F98BC008C50B9 /* AlamofireObjectMapper.swift in Sources */,
+				723726A11F9841B600091769 /* EFAPIDataCellNode.swift in Sources */,
+				72A03BF41F9F494C0012467D /* EFSettingViewController.swift in Sources */,
 				72C808981F7DE3D5002DB148 /* EFSwitchBarNode.swift in Sources */,
+				72A2EE091F97202000093C29 /* EFTestTypeViewController.swift in Sources */,
+				7219134E1F98AFCE00ADB028 /* EFNetworkDataModel.swift in Sources */,
 				721A13DD1F8DB82200769855 /* EFAppAnalyzationModel.swift in Sources */,
+				72BFA0D71F99E5F4004B3B26 /* EFSearchBarNode.swift in Sources */,
+				7234B87E1F974ED500F31218 /* EFPlistFileItemViewController.swift in Sources */,
+				72A2EE081F97202000093C29 /* EFTestLogViewController.swift in Sources */,
+				721913471F98808000ADB028 /* EFLanguageCellNode.swift in Sources */,
+				7234B87C1F97495200F31218 /* EFPlistFileViewController.swift in Sources */,
 				72A9C33B1F8B57FB000FEE5D /* EFTestViewController.swift in Sources */,
-				72A9C3441F8B6FCB000FEE5D /* EFAnalyzeResultModel.swift in Sources */,
+				72BFA0D51F99DCE9004B3B26 /* EFSearchGameViewController.swift in Sources */,
 				72D36D9D1F78B09000200200 /* EFGameListViewController.swift in Sources */,
 				721A13EB1F8F69FC00769855 /* EFGameListItemModel.swift in Sources */,
+				721913451F98741E00ADB028 /* EFLanguageViewController.swift in Sources */,
 				72B187CE1F78D2B700021F66 /* EFGameListCellNode.swift in Sources */,
+				7237269D1F97895100091769 /* EFPlistMainCellNode.swift in Sources */,
+				72C7B4C71F98C698004F9488 /* EFNetworkCellNode.swift in Sources */,
+				7237269F1F983FA000091769 /* EFAPIDataViewController.swift in Sources */,
 				72B5AB421F789C4B00B35D7D /* AppDelegate.swift in Sources */,
+				72A2EE071F97202000093C29 /* EFAnalyzationDataListViewController.swift in Sources */,
+				7237269B1F97817B00091769 /* EFPlistMainInfoViewController.swift in Sources */,
 				721A13DB1F8CBF4800769855 /* EFExamineTool.swift in Sources */,
+				72A2EE0D1F972D9400093C29 /* EFPlistItemCellNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

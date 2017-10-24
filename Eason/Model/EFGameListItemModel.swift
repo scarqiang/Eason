@@ -18,6 +18,7 @@ class EFGameListItemModel: Object, Mappable {
     
     required convenience init?(map: Map) {
         self.init()
+        
     }
     
     func mapping(map: Map) {

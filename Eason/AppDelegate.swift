@@ -16,19 +16,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-//        let gameListVC = EFGameListViewController()
-//        let navbar = UINavigationController(rootViewController: gameListVC)
-//        window = UIWindow()
-//        window?.rootViewController = navbar
+        let gameListVC = EFGameListViewController()
+        let navbar = UINavigationController(rootViewController: gameListVC)
+        window = UIWindow()
+        window?.rootViewController = navbar
         
         return true
     }
-
+    
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         
-        EFExamineTool.saveAnalyzetionData(url: url) {
+        EFExamineTool.saveAnalyzetionData(url: url) { (mode) in
             
+            if mode != .network {
+                return
+            }
+            
+            let topVC = self.window?.rootViewController as? UINavigationController
+            if topVC != nil {
+                let vc = EFNetworkDataViewController()
+                topVC?.pushViewController(vc, animated: true)
+            }
         }
         
         return true
