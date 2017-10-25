@@ -34,7 +34,7 @@ class EFLoginViewController: UIViewController {
         usernameField?.borderInactiveColor = UIColor.gray
         usernameField?.placeholder = "用户名"
         usernameField?.placeholderColor = UIColor.lightGray
-        usernameField?.clearsOnBeginEditing = true
+        usernameField?.clearButtonMode = .whileEditing
         self.view.addSubview(usernameField!)
         
         usernameField?.snp.makeConstraints({ (make) in
@@ -83,6 +83,10 @@ class EFLoginViewController: UIViewController {
     @objc func didClickLoginButton(button: UIButton) {
         
         if usernameField?.text == nil || passwordField?.text == nil {
+            let alertView = UIAlertController(title: "账号或密码不能为空", message: nil, preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "确定", style: .cancel, handler: nil)
+            alertView.addAction(cancelAction)
+            self.present(alertView, animated: true, completion: nil)
             return
         }
         EFExamineTool.loadingView.startAnimating()
@@ -94,6 +98,13 @@ class EFLoginViewController: UIViewController {
             
             if response?["code"] as? String == "1000" {
                 self.dismiss(animated: true, completion: nil)
+            }
+            else {
+                let message = response?["message"] as? String
+                let alertView = UIAlertController(title: message, message: nil, preferredStyle: .alert)
+                let cancelAction = UIAlertAction(title: "确定", style: .cancel, handler: nil)
+                alertView.addAction(cancelAction)
+                self.present(alertView, animated: true, completion: nil)
             }
         }
         self.view.endEditing(true)
