@@ -130,7 +130,12 @@ class EFSearchGameViewController: ASViewController<ASDisplayNode>, ASTableDataSo
         tableNode.deselectRow(at: indexPath, animated: true)
         
         let model = resultsArr[indexPath.row]
-        let vc = EFAnalyzationDataListViewController(gameCode: model.game_code_info!.game_code,
+        
+        var gameCode = model.game_code_info!.game_code
+        if EFUserInfo.getKrtestStatus() {
+            gameCode = "krtestios"
+        }
+        let vc = EFAnalyzationDataListViewController(gameCode: gameCode,
                                                      gameName: model.game_code_info!.game_name)
         self.navigationController?.pushViewController(vc, animated: true)
         EFExamineTool.saveRecentGamesData(model: model)

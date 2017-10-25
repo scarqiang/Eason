@@ -248,6 +248,7 @@ class EFUserInfo: NSObject {
     static let passwordKey = "EFPasswordKey"
     static let resetUUIDKey = "EFResetUUIDKey"
     static let resetUserDefultKey = "EFResetUserDefultKey"
+    static let krtestStatusKey = "EFKrtestStatusKey"
     
     class func isLogin() -> Bool {
         let userInfo = EFUserInfo.getUserInfo()
@@ -273,6 +274,19 @@ class EFUserInfo: NSObject {
         UserDefaults.standard.synchronize()
     }
     
+    class func saveKrtestStatus(isOn: Bool) {
+        UserDefaults.standard.setValuesForKeys([krtestStatusKey: isOn])
+        UserDefaults.standard.synchronize()
+    }
+    
+    class func getKrtestStatus() -> Bool {
+        let isOn = UserDefaults.standard.object(forKey: krtestStatusKey) as? Bool
+        if isOn == nil {
+            return false
+        }
+        return isOn!
+    }
+    
     class func getResetUUIDStatus() -> Bool {
         let isOn = UserDefaults.standard.object(forKey: resetUUIDKey) as? Bool
         if isOn == nil {
@@ -291,6 +305,7 @@ class EFUserInfo: NSObject {
     
     class func logout() {
         UserDefaults.standard.removeObject(forKey: passwordKey)
+         UserDefaults.standard.removeObject(forKey: krtestStatusKey)
         UserDefaults.standard.synchronize()
     }
     

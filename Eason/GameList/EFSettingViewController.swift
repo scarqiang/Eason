@@ -10,7 +10,7 @@ import UIKit
 
 class EFSettingViewController: ASViewController<ASDisplayNode>, ASTableDataSource, ASTableDelegate, EFSettingCellNodeDelegate {
 
-    let titles = ["测试模式重置UUID", "测试模式重置用户信息"]
+    let titles = ["测试模式重置UUID", "测试模式重置用户信息", "使用krtest测试"]
     var tableNode: ASTableNode?
     
     init() {
@@ -60,9 +60,13 @@ class EFSettingViewController: ASViewController<ASDisplayNode>, ASTableDataSourc
             if indexPath.row == 0 {
                 cell.switchView.isOn = EFUserInfo.getResetUUIDStatus()
             }
-            else {
+            else if indexPath.row == 1 {
                 cell.switchView.isOn = EFUserInfo.getResetUserDefultStatus()
             }
+            else {
+                cell.switchView.isOn = EFUserInfo.getKrtestStatus()
+            }
+            
             return cell
         }
         else {
@@ -92,8 +96,11 @@ class EFSettingViewController: ASViewController<ASDisplayNode>, ASTableDataSourc
         if indexPath.row == 0 {
             EFUserInfo.saveResetUUIDStatus(isOn: isOn)
         }
-        else {
+        else if (indexPath.row == 1) {
             EFUserInfo.saveResetUserDefultStatus(isOn: isOn)
+        }
+        else {
+            EFUserInfo.saveKrtestStatus(isOn: isOn)
         }
     }
     
