@@ -22,6 +22,7 @@ class EFSearchBarNode: ASDisplayNode, ASEditableTextNodeDelegate {
         self.init()
         self.backgroundColor = UIColor(hexString: "c2c3c4")
         self.layer.cornerRadius = 5
+        self.clipsToBounds = true
         self.setupSubNode()
         self.delegate = delegate
     }

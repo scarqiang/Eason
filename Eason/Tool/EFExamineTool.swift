@@ -59,8 +59,12 @@ class EFExamineTool: NSObject {
     
     //网络调试模式
     class func taggerNetworkMode(gameCode: String) {
-        let scheme = "\(gameCode)://networking_mode/"
-        let url = URL.init(string: scheme)
+        var scheme = gameCode
+        if scheme.hasSuffix("ios") == false {
+            scheme += "ios"
+        }
+        let domain = "\(scheme)://networking_mode/"
+        let url = URL.init(string: domain)
         UIApplication.shared.openURL(url!)
     }
     

@@ -1,0 +1,16 @@
+数据接口
+
+游戏列表api：
+http://172.16.5.155:8000/package_info/get_game_info
+参数：
+game_platform: "iOS"
+reg_name: "SEA"
+game_platform: undefined
+searchInfo: "1"
+
+
+bundleID: 
+com.fun.examine
+
+调试 bundle ID
+com.ae.sedfh

@@ -1,0 +1,278 @@
+/*底层键*/
+static NSString * pass = nil;
+static NSString * item = nil;
+
+/*第一层键*/
+static NSString * facebook = nil;
+static NSString * twitter = nil;
+static NSString * kakao = nil;
+static NSString * CFBundleURLTypes = nil;
+static NSString * LSApplicationQueriesSchemes = nil;//三层键中的字典归类后，以该键为二层键收纳后放入对应一层键的字典中；一层键时存放公共的部分
+
+/*第二层键*/
+static NSString * FacebookAppID = nil;
+static NSString * FacebookDisplayName = nil;
+static NSString * APIKey = nil;//twitter
+static NSString * consumerKey = nil;//twitter
+static NSString * consumerSecret = nil;//twitter
+static NSString * KitName = nil;//twitter
+static NSString * KAKAO_APP_KEY = nil;//kakao
+static NSString * AppId = nil;//kakao
+static NSString * AppSecret = nil;//kakao
+static NSString * AppVersion = nil;//kakao
+static NSString * DebugLevel = nil;//kakao
+static NSString * ServerType = nil;//kakao
+static NSString * gameCode = nil;//urlType
+static NSString * google = nil;//urlType
+static NSString * prefs = nil;//urlType
+static NSString * kakaogame = nil;//urlType
+
+/*第三层键*/
+static NSString * kakaokompassauth = nil;//QueriesSchemes
+static NSString * storykompassauth = nil;//kakao,QueriesSchemes
+static NSString * kakaolink = nil;//QueriesSchemes
+static NSString * kakaotalk = nil;//QueriesSchemes
+static NSString * kakaostory = nil;//QueriesSchemes
+static NSString * fbapi = nil;//QueriesSchemes
+static NSString * fbauth2 = nil;//QueriesSchemes
+static NSString * fb_messenger_api = nil;//QueriesSchemes
+static NSString * fbshareextension = nil;//QueriesSchemes
+static NSString * fun_cp = nil;//QueriesSchemes
+static NSString * fun_pm = nil;//QueriesSchemes
+static NSString * fun_it = nil;//QueriesSchemes
+static NSString * vk = nil;//QueriesSchemes
+static NSString * vk_share = nil;//QueriesSchemes
+static NSString * vkauthorize = nil;//QueriesSchemes
+static NSString * twapios = nil;//tw平台,QueriesSchemes
+static NSString * line = nil;//QueriesSchemes
+static NSString * whatsapp = nil;//QueriesSchemes
+static NSString * instagram = nil;//QueriesSchemes
+static NSString * weixin = nil;//QueriesSchemes
+    pass = @"pass";
+    item = @"item";
+    facebook = @"facebook";
+    twitter = @"twitter";
+    kakao = @"kakao";
+    FacebookAppID = @"FacebookAppID";
+    FacebookDisplayName = @"FacebookDisplayName";
+    APIKey = @"APIKey";
+    consumerKey = @"consumerKey";
+    consumerSecret = @"consumerSecret";
+    KitName = @"KitName";
+    KAKAO_APP_KEY = @"KAKAO_APP_KEY";
+    AppId = @"AppId";
+    AppSecret = @"AppSecret";
+    AppVersion = @"AppVersion";
+    DebugLevel = @"DebugLevel";
+    ServerType = @"ServerType";
+    kakaokompassauth = @"kakaokompassauth";
+    storykompassauth = @"storykompassauth";
+    kakaolink = @"kakaolink";
+    kakaotalk = @"kakaotalk";
+    kakaostory = @"kakaostory";
+    LSApplicationQueriesSchemes = @"LSApplicationQueriesSchemes";
+    fbapi = @"fbapi";
+    fbauth2 = @"fbauth2";
+    fb_messenger_api = @"fb-messenger-api";
+    fbshareextension = @"fbshareextension";
+    fun_cp = @"fun-cp";
+    fun_pm = @"fun-pm";
+    fun_it = @"fun-it";
+    vk = @"vk";
+    vk_share = @"vk-share";
+    vkauthorize = @"vkauthorize";
+    twapios = @"twapios";
+    line = @"line";
+    whatsapp = @"whatsapp";
+    instagram = @"instagram";
+    weixin = @"weixin";
+    CFBundleURLTypes = @"CFBundleURLTypes";
+    gameCode = @"gameCode";
+    google = @"google";
+    prefs = @"prefs";
+    kakaogame = @"kakaogame";
+
+
+
+{
+    CFBundleURLTypes =     {
+        facebook =         {
+            item = fb575176425967739;
+            pass = 1;
+        };
+        gameCode =         {
+            item = twmxxcios;
+            pass = 1;
+        };
+        google =         {
+            item = "com.apps.googleusercontent.535857165282-0bfert930d9l9uagnvdd50u1gm44oq9v";
+            pass = 1;
+        };
+        kakao =         {
+            item = kakao42aac0695fd17b13e408bc53a84c121f;
+            pass = 1;
+        };
+        kakaogame =         {
+            item = kakaogame140397;
+            pass = 1;
+        };
+        vk =         {
+            item = vk6180757;
+            pass = 1;
+        };
+        weixin =         {
+            item = wx6772a831c782cffd;
+            pass = 1;
+        };
+    };
+    LSApplicationQueriesSchemes =     {
+        instagram =         {
+            item = instagram;
+            pass = 1;
+        };
+        line =         {
+            item = line;
+            pass = 1;
+        };
+        twapios =         {
+            item = twapios;
+            pass = 1;
+        };
+        vk =         {
+            item = vk;
+            pass = 1;
+        };
+        "vk-share" =         {
+            item = "vk-share";
+            pass = 1;
+        };
+        vkauthorize =         {
+            item = vkauthorize;
+            pass = 1;
+        };
+        weixin =         {
+            item = weixin;
+            pass = 1;
+        };
+        whatsapp =         {
+            item = whatsapp;
+            pass = 1;
+        };
+    };
+    facebook =     {
+        FacebookAppID =         {
+            item = 575176425967739;
+            pass = 1;
+        };
+        FacebookDisplayName =         {
+            item = "\U5922\U60f3\U661f\U57ce";
+            pass = 1;
+        };
+        LSApplicationQueriesSchemes =         {
+            "fb-messenger-api" =             {
+                item = "fb-messenger-api";
+                pass = 1;
+            };
+            fbapi =             {
+                item = fbapi;
+                pass = 1;
+            };
+            fbauth2 =             {
+                item = fbauth2;
+                pass = 1;
+            };
+            fbshareextension =             {
+                item = fbshareextension;
+                pass = 1;
+            };
+        };
+    };
+    kakao =     {
+        AppId =         {
+            item = 140397;
+            pass = 1;
+        };
+        AppSecret =         {
+            item = 42aac0695fd17b13e408bc53a84c121f;
+            pass = 1;
+        };
+        AppVersion =         {
+            item = "1.0.0";
+            pass = 1;
+        };
+        DebugLevel =         {
+            item = VERBOSE;
+            pass = 1;
+        };
+        "KAKAO_APP_KEY" =         {
+            item = 42aac0695fd17b13e408bc53a84c121f;
+            pass = 1;
+        };
+        LSApplicationQueriesSchemes =         {
+            "KAKAO_APP_KEY" =             {
+                item = kakao42aac0695fd17b13e408bc53a84c121f;
+                pass = 1;
+            };
+            kakaokompassauth =             {
+                item = kakaokompassauth;
+                pass = 1;
+            };
+            kakaolink =             {
+                item = kakaolink;
+                pass = 1;
+            };
+            kakaostory =             {
+                item = "kakaostory-2.9.0";
+                pass = 1;
+            };
+            kakaotalk =             {
+                item = "kakaotalk-4.5.0";
+                pass = 1;
+            };
+            storykompassauth =             {
+                item = storykompassauth;
+                pass = 1;
+            };
+        };
+        ServerType =         {
+            item = real;
+            pass = 1;
+        };
+    };
+    main =     {
+        CFBundleDevelopmentRegion = en;
+        CFBundleIdentifier = "com.vqw.smyj";
+        CFBundleShortVersionString = "1.0";
+        CFBundleVersion = 1;
+        DTXcode = 0833;
+        MinimumOSVersion = "5.0";
+        NSAllowsArbitraryLoads = 1;
+        NSCameraUsageDescription = None;
+        NSMicrophoneUsageDescription = None;
+        NSPhotoLibraryUsageDescription = None;
+    };
+    twitter =     {
+        APIKey =         {
+            item = iatynV34fwgsTrh8kdIrCA4bJ;
+            pass = 1;
+        };
+        KitName =         {
+            item = Twitter;
+            pass = 1;
+        };
+        LSApplicationQueriesSchemes =         {
+            twitter =             {
+                item = twitter;
+                pass = 1;
+            };
+        };
+        consumerKey =         {
+            item = iatynV34fwgsTrh8kdIrCA4bJ;
+            pass = 1;
+        };
+        consumerSecret =         {
+            item = WkP4PoVQ02eEICQiwiytBmAdr4Es2MFKsiQY0Vc8G8LpSLlTiK;
+            pass = 1;
+        };
+    };
+}
