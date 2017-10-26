@@ -132,8 +132,8 @@ class EFSearchGameViewController: ASViewController<ASDisplayNode>, ASTableDataSo
         let model = resultsArr[indexPath.row]
         
         var gameCode = model.game_code_info!.game_code
-        if EFUserInfo.getKrtestStatus() {
-            gameCode = "krtestios"
+        if let designGameCode = EFUserInfo.getDesignatedGameCode() {
+            gameCode = designGameCode
         }
         let vc = EFAnalyzationDataListViewController(gameCode: gameCode,
                                                      gameName: model.game_code_info!.game_name)

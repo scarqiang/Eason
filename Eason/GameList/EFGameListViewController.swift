@@ -244,8 +244,8 @@ final class EFGameListViewController: ASViewController<ASDisplayNode>, ASTableDa
     //MARK: EFGameModuleCellNodeDeleage
     func didSelectGameModuleCell(model: EFGameListItemModel) {
         var gameCode = model.game_code_info?.game_code
-        if EFUserInfo.getKrtestStatus() {
-            gameCode = "krtestios"
+        if let designGameCode = EFUserInfo.getDesignatedGameCode() {
+            gameCode = designGameCode
         }
         let vc = EFAnalyzationDataListViewController(gameCode: gameCode!, gameName: model.game_code_info!.game_name)
         self.navigationController?.pushViewController(vc, animated: true)
