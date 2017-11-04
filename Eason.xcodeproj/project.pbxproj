@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7204C6521F9D91CD002BD036 /* DZNEmptyDataSet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7204C6511F9D91CC002BD036 /* DZNEmptyDataSet.framework */; };
 		7204C6541F9DC70C002BD036 /* LiquidFloatingActionButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7204C6531F9DC70C002BD036 /* LiquidFloatingActionButton.framework */; };
+		721017871FADA84100B63660 /* EFSelectAPIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721017861FADA84100B63660 /* EFSelectAPIViewController.swift */; };
+		721017891FADBE3C00B63660 /* EFOptionApiCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721017881FADBE3C00B63660 /* EFOptionApiCellNode.swift */; };
 		721913451F98741E00ADB028 /* EFLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721913441F98741E00ADB028 /* EFLanguageViewController.swift */; };
 		721913471F98808000ADB028 /* EFLanguageCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721913461F98808000ADB028 /* EFLanguageCellNode.swift */; };
 		7219134E1F98AFCE00ADB028 /* EFNetworkDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7219134D1F98AFCE00ADB028 /* EFNetworkDataModel.swift */; };
@@ -25,6 +27,8 @@
 		7237269D1F97895100091769 /* EFPlistMainCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7237269C1F97895100091769 /* EFPlistMainCellNode.swift */; };
 		7237269F1F983FA000091769 /* EFAPIDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7237269E1F983FA000091769 /* EFAPIDataViewController.swift */; };
 		723726A11F9841B600091769 /* EFAPIDataCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723726A01F9841B600091769 /* EFAPIDataCellNode.swift */; };
+		729DA2561FAB07DA0006C9E7 /* EFNecessaryAPICellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729DA2551FAB07DA0006C9E7 /* EFNecessaryAPICellNode.swift */; };
+		729DA2581FAB0C510006C9E7 /* EFNecessaryAPIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729DA2571FAB0C510006C9E7 /* EFNecessaryAPIViewController.swift */; };
 		72A03BF41F9F494C0012467D /* EFSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A03BF31F9F494C0012467D /* EFSettingViewController.swift */; };
 		72A03BF61F9F49F50012467D /* EFSettingCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A03BF51F9F49F50012467D /* EFSettingCellNode.swift */; };
 		72A2EDFD1F963F3100093C29 /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A2EDFC1F963F2F00093C29 /* NVActivityIndicatorView.framework */; };
@@ -79,6 +83,8 @@
 /* Begin PBXFileReference section */
 		7204C6511F9D91CC002BD036 /* DZNEmptyDataSet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DZNEmptyDataSet.framework; path = Carthage/Build/iOS/DZNEmptyDataSet.framework; sourceTree = "<group>"; };
 		7204C6531F9DC70C002BD036 /* LiquidFloatingActionButton.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LiquidFloatingActionButton.framework; path = Carthage/Build/iOS/LiquidFloatingActionButton.framework; sourceTree = "<group>"; };
+		721017861FADA84100B63660 /* EFSelectAPIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFSelectAPIViewController.swift; sourceTree = "<group>"; };
+		721017881FADBE3C00B63660 /* EFOptionApiCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFOptionApiCellNode.swift; sourceTree = "<group>"; };
 		721913441F98741E00ADB028 /* EFLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFLanguageViewController.swift; sourceTree = "<group>"; };
 		721913461F98808000ADB028 /* EFLanguageCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFLanguageCellNode.swift; sourceTree = "<group>"; };
 		7219134D1F98AFCE00ADB028 /* EFNetworkDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFNetworkDataModel.swift; sourceTree = "<group>"; };
@@ -95,6 +101,8 @@
 		7237269C1F97895100091769 /* EFPlistMainCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFPlistMainCellNode.swift; sourceTree = "<group>"; };
 		7237269E1F983FA000091769 /* EFAPIDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFAPIDataViewController.swift; sourceTree = "<group>"; };
 		723726A01F9841B600091769 /* EFAPIDataCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFAPIDataCellNode.swift; sourceTree = "<group>"; };
+		729DA2551FAB07DA0006C9E7 /* EFNecessaryAPICellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFNecessaryAPICellNode.swift; sourceTree = "<group>"; };
+		729DA2571FAB0C510006C9E7 /* EFNecessaryAPIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFNecessaryAPIViewController.swift; sourceTree = "<group>"; };
 		72A03BF31F9F494C0012467D /* EFSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFSettingViewController.swift; sourceTree = "<group>"; };
 		72A03BF51F9F49F50012467D /* EFSettingCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFSettingCellNode.swift; sourceTree = "<group>"; };
 		72A2EDFC1F963F2F00093C29 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorView.framework; path = Carthage/Build/iOS/NVActivityIndicatorView.framework; sourceTree = "<group>"; };
@@ -197,6 +205,8 @@
 				7237269E1F983FA000091769 /* EFAPIDataViewController.swift */,
 				721913441F98741E00ADB028 /* EFLanguageViewController.swift */,
 				72C7B4C41F98C0D3004F9488 /* EFNetworkDataViewController.swift */,
+				729DA2571FAB0C510006C9E7 /* EFNecessaryAPIViewController.swift */,
+				721017861FADA84100B63660 /* EFSelectAPIViewController.swift */,
 			);
 			path = AppsTestDataList;
 			sourceTree = "<group>";
@@ -221,6 +231,8 @@
 				723726A01F9841B600091769 /* EFAPIDataCellNode.swift */,
 				721913461F98808000ADB028 /* EFLanguageCellNode.swift */,
 				72C7B4C61F98C698004F9488 /* EFNetworkCellNode.swift */,
+				729DA2551FAB07DA0006C9E7 /* EFNecessaryAPICellNode.swift */,
+				721017881FADBE3C00B63660 /* EFOptionApiCellNode.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -496,11 +508,14 @@
 				72B5AB441F789C4B00B35D7D /* ViewController.swift in Sources */,
 				722AB58D1F7CC9A400B73C6B /* EFGameModuleCellNode.swift in Sources */,
 				72C1A45B1F9DEC0800AFFA90 /* EFLoginViewController.swift in Sources */,
+				729DA2561FAB07DA0006C9E7 /* EFNecessaryAPICellNode.swift in Sources */,
 				72C7B4C51F98C0D3004F9488 /* EFNetworkDataViewController.swift in Sources */,
 				72209BCE1F8F98BC008C50B9 /* AlamofireObjectMapper.swift in Sources */,
+				721017891FADBE3C00B63660 /* EFOptionApiCellNode.swift in Sources */,
 				723726A11F9841B600091769 /* EFAPIDataCellNode.swift in Sources */,
 				72A03BF41F9F494C0012467D /* EFSettingViewController.swift in Sources */,
 				72C808981F7DE3D5002DB148 /* EFSwitchBarNode.swift in Sources */,
+				721017871FADA84100B63660 /* EFSelectAPIViewController.swift in Sources */,
 				72A2EE091F97202000093C29 /* EFTestTypeViewController.swift in Sources */,
 				7219134E1F98AFCE00ADB028 /* EFNetworkDataModel.swift in Sources */,
 				721A13DD1F8DB82200769855 /* EFAppAnalyzationModel.swift in Sources */,
@@ -516,6 +531,7 @@
 				721913451F98741E00ADB028 /* EFLanguageViewController.swift in Sources */,
 				72B187CE1F78D2B700021F66 /* EFGameListCellNode.swift in Sources */,
 				7237269D1F97895100091769 /* EFPlistMainCellNode.swift in Sources */,
+				729DA2581FAB0C510006C9E7 /* EFNecessaryAPIViewController.swift in Sources */,
 				72C7B4C71F98C698004F9488 /* EFNetworkCellNode.swift in Sources */,
 				7237269F1F983FA000091769 /* EFAPIDataViewController.swift in Sources */,
 				72B5AB421F789C4B00B35D7D /* AppDelegate.swift in Sources */,

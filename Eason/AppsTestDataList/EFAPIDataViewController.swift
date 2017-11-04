@@ -29,13 +29,29 @@ class EFAPIDataViewController: ASViewController<ASDisplayNode>, ASTableDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "API调用信息"
-        
+        setupRightBarItem()
         self.tableNode?.view.tableFooterView = UIView()
         self.tableNode!.delegate = self
         self.tableNode!.dataSource = self
         // Do any additional setup after loading the view.
     }
 
+    func setupRightBarItem() {
+        let button = UIButton(type: .custom)
+        button.setBackgroundImage(#imageLiteral(resourceName: "list"), for: .normal)
+        button.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+        button.addTarget(self, action: #selector(self.pushCheckApiViewController), for: .touchUpInside)
+        let searchItem = UIBarButtonItem(customView: button)
+        let specItem = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        specItem.width = -10
+        self.navigationItem.rightBarButtonItems = [searchItem, specItem]
+    }
+    
+    @objc func pushCheckApiViewController()  {
+        let vc = EFNecessaryAPIViewController(models: self.modelArr)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     //MARK: table node delegate and datasource
     func tableNode(_ tableNode: ASTableNode, numberOfRowsInSection section: Int) -> Int {
         return modelArr.count

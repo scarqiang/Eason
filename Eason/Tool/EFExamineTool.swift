@@ -253,6 +253,8 @@ class EFUserInfo: NSObject {
     static let resetUUIDKey = "EFResetUUIDKey"
     static let resetUserDefultKey = "EFResetUserDefultKey"
     static let designatedGameCodeKey = "EFDesignatedGameCodeKey"
+    static let didSelectOptionApiKey = "EFDidSelectOptionApiKey"
+    static let optionApiKey = "EFOptionApiKey"
     
     class func isLogin() -> Bool {
         let userInfo = EFUserInfo.getUserInfo()
@@ -312,6 +314,8 @@ class EFUserInfo: NSObject {
         UserDefaults.standard.removeObject(forKey: passwordKey)
          UserDefaults.standard.removeObject(forKey: designatedGameCodeKey)
         UserDefaults.standard.removeObject(forKey: designatedGameCodeKey)
+        UserDefaults.standard.removeObject(forKey: optionApiKey)
+        UserDefaults.standard.removeObject(forKey: didSelectOptionApiKey)
         UserDefaults.standard.synchronize()
     }
     
@@ -326,6 +330,79 @@ class EFUserInfo: NSObject {
             info[passwordKey] = password
         }
         return info
+    }
+    
+    class func getNecessaryAPI() -> [String: String] {
+        return [
+            "finishLaunch": "应用启动",
+            "openURL": "应用处理第三方触发打开应用的数据",
+            "becomeActive": "应用激活",
+            "enterBackground": "应用进入后台",
+            "login": "打开Efun登录页面",
+            "pay": "调用内购接口",
+            "push": "调用上报推送ID的接口",
+            "share": "调用分享接口",
+            "loginSuccess": "loginSuccess",
+            "shareResult": "shareResult"
+        ]
+    }
+    
+    class func getOptionAPI() -> [String: String] {
+        if let dic = UserDefaults.standard.object(forKey: optionApiKey) as? [String: String] {
+            return dic
+        }
+        else {
+            return [
+                "invitation": "打开Efun邀请页面",
+                "logout": "调用Efun登出",
+                "memberCenter": "打开Efun账号管理中心页面",
+                "setLanguage": "设置SDK语言",
+                "platformLoginSuccess": "显示平台悬浮按钮",
+                "showPlatformModulePage": "打开平台模块页面",
+                "showPromotion": "打开广告墙",
+                "showAnnounce": "打开系统公告",
+                "trackEvent": "调用事件统计接口",
+                "fbAuthorize": "调用第三方授权接口",
+                "fbRelateEfun": "调用关联账号接口",
+                "fbUserProfile": "调用获取用户资料接口",
+                "fbPlayingFriend": "调用获取在玩好友接口",
+                "fbInvitableFriend": "调用获取可邀请好友接口",
+                "fbInvitableFriendPage": "调用分页获取可邀请好友接口",
+                "fbInviteFriend": "调用发送邀请接口"
+            ]
+        }
+    }
+    
+    class func getDidSelectOptionAPI() -> [String: String] {
+        if let dic = UserDefaults.standard.object(forKey: didSelectOptionApiKey) as? [String: String] {
+            return dic
+        }
+        else {
+            return [String: String]()
+        }
+    }
+    
+    class func exchangeOptionAPI(dic: [String: String]) {
+        var optionAPIs = getOptionAPI()
+        var selectAPIs = getDidSelectOptionAPI()
+        
+        for (api, apiDescription) in dic {
+            if optionAPIs[api] != nil && selectAPIs[api] == nil {
+                optionAPIs[api] = nil
+                selectAPIs[api] = apiDescription
+            }
+            else if optionAPIs[api] == nil && selectAPIs[api] != nil {
+                optionAPIs[api] = apiDescription
+                selectAPIs[api] = nil
+            }
+            else {
+                print("方法：\(api)，状态改变失败")
+            }
+        }
+        
+        UserDefaults.standard.set(optionAPIs, forKey: optionApiKey)
+        UserDefaults.standard.set(selectAPIs, forKey: didSelectOptionApiKey)
+        UserDefaults.standard.synchronize()
     }
 }
 

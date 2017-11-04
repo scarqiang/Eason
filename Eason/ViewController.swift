@@ -14,7 +14,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.view.backgroundColor = UIColor.clear
+        view.isOpaque = false
         
+        let testview = UIView(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
+        testview.backgroundColor = UIColor.red
+        view.addSubview(testview)
     }
 
     override func viewDidAppear(_ animated: Bool) {
