@@ -59,6 +59,7 @@ class EFOptionApiCellNode: ASCellNode {
         super.layoutSpecThatFits(constrainedSize)
         
         self.valueNode.style.flexGrow = 1
+        self.valueNode.style.flexShrink = 1
         self.valueNode.maximumNumberOfLines = 0
         let textSpec = ASStackLayoutSpec(direction: .vertical,
                                          spacing: 5,
@@ -68,6 +69,7 @@ class EFOptionApiCellNode: ASCellNode {
         
         iconImageNode.style.preferredSize = CGSize(width: 40, height: 40)
         textSpec.style.flexGrow = 1
+        textSpec.style.flexShrink = 1
         let minW = UIScreen.main.bounds.width - 60
         textSpec.style.maxSize = CGSize(width: minW, height: CGFloat.greatestFiniteMagnitude)
         
@@ -77,6 +79,10 @@ class EFOptionApiCellNode: ASCellNode {
                                         justifyContent: .spaceBetween,
                                         alignItems: .stretch,
                                         children: [textSpec, iconImageNode])
+        
+        let maxW = UIScreen.main.bounds.width / 3
+        wapSpec.style.maxSize = CGSize(width: maxW, height: CGFloat.greatestFiniteMagnitude)
+        
         let edgeInset = UIEdgeInsetsMake(10, 10, 10, 5)
         return ASInsetLayoutSpec(insets: edgeInset, child: wapSpec)
     }
