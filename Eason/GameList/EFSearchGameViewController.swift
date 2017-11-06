@@ -93,24 +93,36 @@ class EFSearchGameViewController: ASViewController<ASDisplayNode>, ASTableDataSo
         self.resultsArr.removeAll()
         EFExamineTool.loadingView.startAnimating()
         EFNetworking.shared.fetchSearchResult(keyword: keyword) { (results, error) in
-            EFExamineTool.loadingView.stopAnimating()
-            if error != nil {
-                self.tableNode?.view.emptyDataSetDelegate = self
-                self.tableNode?.view.emptyDataSetSource = self
-                self.tableNode?.reloadData()
-                return
-            }
-            
-            if (results?.count != 0) {
-                self.resultsArr += results!
-                self.tableNode?.reloadData()
-            }
-            else {
-                self.tableNode?.view.emptyDataSetDelegate = self
-                self.tableNode?.view.emptyDataSetSource = self
-                self.tableNode?.reloadData()
-                return
-            }
+            self.dealSearchResutl(error: error, results: results)
+        }
+    }
+    
+    func shouldChange(text: String, keyword: String) {
+        self.resultsArr.removeAll()
+        EFExamineTool.loadingView.startAnimating()
+        EFNetworking.shared.fetchSearchResult(keyword: keyword) { (results, error) in
+            self.dealSearchResutl(error: error, results: results)
+        }
+    }
+    
+    func dealSearchResutl(error: Error?, results:  [EFGameListItemModel]?)  {
+        EFExamineTool.loadingView.stopAnimating()
+        if error != nil {
+            self.tableNode?.view.emptyDataSetDelegate = self
+            self.tableNode?.view.emptyDataSetSource = self
+            self.tableNode?.reloadData()
+            return
+        }
+        
+        if (results?.count != 0) {
+            self.resultsArr += results!
+            self.tableNode?.reloadData()
+        }
+        else {
+            self.tableNode?.view.emptyDataSetDelegate = self
+            self.tableNode?.view.emptyDataSetSource = self
+            self.tableNode?.reloadData()
+            return
         }
     }
     

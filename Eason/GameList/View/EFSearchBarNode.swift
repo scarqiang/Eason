@@ -10,6 +10,7 @@ import UIKit
 
 protocol EFSearchBarNodeDelegate {
     func didClickSearchButton(bar: EFSearchBarNode, keyword: String)
+    func shouldChange(text: String, keyword: String)
 }
 
 class EFSearchBarNode: ASDisplayNode, ASEditableTextNodeDelegate {
@@ -79,6 +80,16 @@ class EFSearchBarNode: ASDisplayNode, ASEditableTextNodeDelegate {
                 self.delegate?.didClickSearchButton(bar: self, keyword: (editableTextNode.attributedText?.string)!)
             }
             return false
+        }
+        
+        if text.count > 0 {
+            
+            var keyword = text
+            
+            if editableTextNode.attributedText != nil && editableTextNode.attributedText?.length != 0 {
+                keyword = editableTextNode.attributedText!.string + keyword
+            }
+            self.delegate!.shouldChange(text: text, keyword: keyword)
         }
         
         return true
