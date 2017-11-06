@@ -90,6 +90,15 @@ class EFSearchBarNode: ASDisplayNode, ASEditableTextNodeDelegate {
                 keyword = editableTextNode.attributedText!.string + keyword
             }
             self.delegate!.shouldChange(text: text, keyword: keyword)
+             return true
+        }
+        
+        if editableTextNode.attributedText != nil && editableTextNode.attributedText?.length != 0 && text == "" {
+            
+            var keyword = editableTextNode.attributedText!.string
+            keyword.removeLast()
+            self.delegate!.shouldChange(text: text, keyword: keyword)
+            return true
         }
         
         return true
