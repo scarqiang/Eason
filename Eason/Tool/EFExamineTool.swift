@@ -44,7 +44,8 @@ class EFExamineTool: NSObject {
         
         let parameter = ["file_name": fileName,
                          "uuid_reset": uuidReset ? "1" : "0",
-                         "user_default_reset": userDefaultReset ? "1" : "0"]
+                         "user_default_reset": userDefaultReset ? "1" : "0",
+                         "entranceShowDelay": "10"]
         
         let path = jsonToString(json: parameter)
         let data = path.data(using: .utf8)
@@ -64,7 +65,16 @@ class EFExamineTool: NSObject {
             scheme += "ios"
         }
         let domain = "\(scheme)://networking_mode/"
-        let url = URL.init(string: domain)
+        //添加延迟十秒启动
+        let parameter = ["entranceShowDelay": "10"]
+        
+        let path = jsonToString(json: parameter)
+        let data = path.data(using: .utf8)
+        
+        let dataString = data?.hexadecimal()
+        
+        let urlStr = "\(domain)\(dataString!)"
+        let url = URL.init(string: urlStr)
         UIApplication.shared.openURL(url!)
     }
     
