@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import AdSupport
 
 class EFSettingViewController: ASViewController<ASDisplayNode>, ASTableDataSource, ASTableDelegate, EFSettingCellNodeDelegate {
 
-    let titles = ["测试模式重置UUID", "测试模式重置用户信息", "使用指定game code测试"]
+    let titles = ["测试模式重置UUID", "测试模式重置用户信息", "使用指定game code测试", "IDFA"]
     var tableNode: ASTableNode?
     
     init() {
@@ -55,6 +56,19 @@ class EFSettingViewController: ASViewController<ASDisplayNode>, ASTableDataSourc
     func tableNode(_ tableNode: ASTableNode, nodeForRowAt indexPath: IndexPath) -> ASCellNode {
         if indexPath.section == 0 {
             let title = titles[indexPath.row]
+            
+            if indexPath.row == 3 {
+                let cell = ASTextCellNode()
+                cell.backgroundColor = UIColor.white
+                cell.selectionStyle = .none
+                let IDFA = ASIdentifierManager.shared().advertisingIdentifier.uuidString
+                cell.textNode.attributedText = NSAttributedString(string: "IDFA: \(IDFA)", attributes: [
+                    NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 16),
+                    NSAttributedStringKey.foregroundColor: UIColor.black
+                    ])
+                return cell;
+            }
+            
             var cell = EFSettingCellNode(title: title, delegate: self)
             cell.selectionStyle = .none
             if indexPath.row == 0 {
