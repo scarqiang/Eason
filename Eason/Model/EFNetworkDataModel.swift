@@ -1,5 +1,5 @@
 //
-//  EFNetworkDataModel.swift
+//  EFNetworkDataModel.swift - 网络数据model
 //  Eason
 //
 //  Created by Efun on 2017/10/19.

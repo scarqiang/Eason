@@ -1,5 +1,5 @@
 //
-//  EFTestTypeViewController.swift
+//  EFTestTypeViewController.swift - 选择查看检测内容选项界面
 //  Eason
 //
 //  Created by Efun on 2017/10/16.

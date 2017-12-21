@@ -1,5 +1,5 @@
 //
-//  EFTestLogViewController.swift
+//  EFTestLogViewController.swift - 测试打印日志结果界面
 //  Eason
 //
 //  Created by Efun on 2017/10/16.

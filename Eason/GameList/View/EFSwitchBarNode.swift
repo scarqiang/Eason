@@ -1,5 +1,5 @@
 //
-//  EFSwitchBarNode.swift
+//  EFSwitchBarNode.swift - 首页顶部切换游戏地区的bar
 //  Eason
 //
 //  Created by Efun on 2017/9/29.

@@ -1,5 +1,5 @@
 //
-//  EFLoginViewController.swift
+//  EFLoginViewController.swift - 登录界面
 //  Eason
 //
 //  Created by Efun on 2017/10/23.

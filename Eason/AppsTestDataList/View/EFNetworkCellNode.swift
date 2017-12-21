@@ -1,5 +1,5 @@
 //
-//  EFNetworkCellNode.swift
+//  EFNetworkCellNode.swift - 检测网络信息cell node
 //  Eason
 //
 //  Created by Efun on 2017/10/19.

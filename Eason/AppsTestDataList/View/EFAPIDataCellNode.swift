@@ -1,5 +1,5 @@
 //
-//  EFAPIDataCellNode.swift
+//  EFAPIDataCellNode.swift - 检测api内容cell node
 //  Eason
 //
 //  Created by Efun on 2017/10/19.

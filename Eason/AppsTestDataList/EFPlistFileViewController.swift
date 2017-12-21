@@ -1,5 +1,5 @@
 //
-//  EFPlistFileViewController.swift
+//  EFPlistFileViewController.swift - plist文件检测内容选择界面
 //  Eason
 //
 //  Created by Efun on 2017/10/18.

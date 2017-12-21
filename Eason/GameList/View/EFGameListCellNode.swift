@@ -1,5 +1,5 @@
 //
-//  EFGameListCellNode.swift
+//  EFGameListCellNode.swift - 游戏列表cell
 //  Eason
 //
 //  Created by Efun on 2017/9/25.

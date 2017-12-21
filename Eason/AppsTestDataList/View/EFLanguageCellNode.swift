@@ -1,5 +1,5 @@
 //
-//  EFLanguageCellNode.swift
+//  EFLanguageCellNode.swift - 语言列表cell node
 //  Eason
 //
 //  Created by Efun on 2017/10/19.

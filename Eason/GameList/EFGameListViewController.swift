@@ -1,5 +1,5 @@
 //
-//  EFGameListViewController.swift
+//  EFGameListViewController.swift - 首页游戏列表界面
 //  Eason
 //
 //  Created by Efun on 2017/9/25.
@@ -22,7 +22,6 @@ final class EFGameListViewController: ASViewController<ASDisplayNode>, ASTableDa
         static let allValues = [recent, sea, hk, kr]
     }
     
-    private let tableNode = ASTableNode()
     private let rootNode = ASDisplayNode()
     private var collectionNode: ASCollectionNode?
     private var topBar: EFSwitchBarNode?

@@ -1,5 +1,5 @@
 //
-//  EFGameModuleCellNode.swift
+//  EFGameModuleCellNode.swift - 首页各个地区cell node (collectionNode的Item， 内置tableView)
 //  Eason
 //
 //  Created by Efun on 2017/9/28.

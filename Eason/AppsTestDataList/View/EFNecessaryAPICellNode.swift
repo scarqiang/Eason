@@ -1,5 +1,5 @@
 //
-//  EFNecessaryAPICellNode.swift
+//  EFNecessaryAPICellNode.swift - 检测是否调用api的cell node
 //  Eason
 //
 //  Created by Efun on 2017/11/2.

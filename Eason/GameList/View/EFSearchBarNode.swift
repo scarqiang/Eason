@@ -1,5 +1,5 @@
 //
-//  EFSearchBarNode.swift
+//  EFSearchBarNode.swift - 搜索页面的顶部bar
 //  Eason
 //
 //  Created by Efun on 2017/10/20.

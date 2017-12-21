@@ -1,5 +1,5 @@
 //
-//  EFSettingCellNode.swift
+//  EFSettingCellNode.swift - 设置界面的cell
 //  Eason
 //
 //  Created by Efun on 2017/10/24.

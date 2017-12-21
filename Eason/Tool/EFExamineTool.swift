@@ -256,16 +256,27 @@ class EFExamineTool: NSObject {
     }
 }
 
+
+/// 用户信息保存类
 class EFUserInfo: NSObject {
-    
+    //用户名key值
     static let usernameKey = "EFUsernameKey"
+    //密码key值
     static let passwordKey = "EFPasswordKey"
+    //是否开启重置uuid的key值
     static let resetUUIDKey = "EFResetUUIDKey"
+    //是否重置SDK的UserDefault
     static let resetUserDefultKey = "EFResetUserDefultKey"
+    //指定game code的key值
     static let designatedGameCodeKey = "EFDesignatedGameCodeKey"
+    //已选需要检测api的列表的key值
     static let didSelectOptionApiKey = "EFDidSelectOptionApiKey"
+    //可选api列表的key值
     static let optionApiKey = "EFOptionApiKey"
     
+    /// 是否已经登录
+    ///
+    /// - Returns: 登录结果
     class func isLogin() -> Bool {
         let userInfo = EFUserInfo.getUserInfo()
         if userInfo[EFUserInfo.passwordKey] == nil {
@@ -274,36 +285,57 @@ class EFUserInfo: NSObject {
         return true
     }
     
+    /// 保存用户账密
+    ///
+    /// - Parameters:
+    ///   - username: 用户名
+    ///   - password: 密码
     class func saveUserInfo(username: String, password: String) {
         UserDefaults.standard.setValuesForKeys([usernameKey: username])
         UserDefaults.standard.setValuesForKeys([passwordKey: password])
         UserDefaults.standard.synchronize()
     }
     
+    /// 保存UUID状态值
+    ///
+    /// - Parameter isOn: 是否开启
     class func saveResetUUIDStatus(isOn: Bool) {
         UserDefaults.standard.setValuesForKeys([resetUUIDKey: isOn])
         UserDefaults.standard.synchronize()
     }
     
+    /// 保存是否重置userDefult状态
+    ///
+    /// - Parameter isOn: 是否开启
     class func saveResetUserDefultStatus(isOn: Bool) {
         UserDefaults.standard.setValuesForKeys([resetUserDefultKey: isOn])
         UserDefaults.standard.synchronize()
     }
     
+    /// 保存指定gameCode
+    ///
+    /// - Parameter gameGode: 指定gameCode
     class func saveDesignatedGameCode(gameGode: String) {
         UserDefaults.standard.setValuesForKeys([designatedGameCodeKey: gameGode])
         UserDefaults.standard.synchronize()
     }
     
+    /// 获取指定gameCode
+    ///
+    /// - Returns: 指定gameCode
     class func getDesignatedGameCode() -> String? {
         let gameCode = UserDefaults.standard.object(forKey: designatedGameCodeKey) as? String
         return gameCode
     }
     
+    /// 重置指定gameCode
     class func resetDesignatedGameCode() {
         UserDefaults.standard.removeObject(forKey: designatedGameCodeKey)
     }
     
+    /// 获取是否重置uuid状态
+    ///
+    /// - Returns: 状态
     class func getResetUUIDStatus() -> Bool {
         let isOn = UserDefaults.standard.object(forKey: resetUUIDKey) as? Bool
         if isOn == nil {
@@ -312,6 +344,9 @@ class EFUserInfo: NSObject {
         return isOn!
     }
     
+    /// 获取重置SDK的userDefault状态
+    ///
+    /// - Returns: 状态
     class func getResetUserDefultStatus() -> Bool {
         let isOn = UserDefaults.standard.object(forKey: resetUserDefultKey) as? Bool
         if isOn == nil {
@@ -320,6 +355,7 @@ class EFUserInfo: NSObject {
         return isOn!
     }
     
+    /// 登出操作，清除用户数据
     class func logout() {
         UserDefaults.standard.removeObject(forKey: passwordKey)
          UserDefaults.standard.removeObject(forKey: designatedGameCodeKey)
@@ -329,6 +365,9 @@ class EFUserInfo: NSObject {
         UserDefaults.standard.synchronize()
     }
     
+    /// 获取用户账密
+    ///
+    /// - Returns: 用户账密
     class func getUserInfo()-> [String: Any] {
         let username = UserDefaults.standard.object(forKey: usernameKey)
         let password = UserDefaults.standard.object(forKey: passwordKey)
@@ -342,6 +381,9 @@ class EFUserInfo: NSObject {
         return info
     }
     
+    /// 获取是否必要检测API列表
+    ///
+    /// - Returns: 必须检测的api列表
     class func getNecessaryAPI() -> [String: String] {
         return [
             "finishLaunch": "应用启动",
@@ -357,6 +399,9 @@ class EFUserInfo: NSObject {
         ]
     }
     
+    /// 获取可选api列表
+    ///
+    /// - Returns: 可选API列表
     class func getOptionAPI() -> [String: String] {
         if let dic = UserDefaults.standard.object(forKey: optionApiKey) as? [String: String] {
             return dic
@@ -383,6 +428,9 @@ class EFUserInfo: NSObject {
         }
     }
     
+    /// 获取已选的可选检测api列表
+    ///
+    /// - Returns: api字典
     class func getDidSelectOptionAPI() -> [String: String] {
         if let dic = UserDefaults.standard.object(forKey: didSelectOptionApiKey) as? [String: String] {
             return dic
@@ -392,16 +440,21 @@ class EFUserInfo: NSObject {
         }
     }
     
+    /// 已选api列表与可选api列表的成员相互替换
+    ///
+    /// - Parameter dic: api名为值和api描述为键
     class func exchangeOptionAPI(dic: [String: String]) {
         var optionAPIs = getOptionAPI()
         var selectAPIs = getDidSelectOptionAPI()
         
         for (api, apiDescription) in dic {
+            //api在已选api列表存在，可选api列表不存在，则把api添加到可选api中，同时把已选api中移除
             if optionAPIs[api] != nil && selectAPIs[api] == nil {
                 optionAPIs[api] = nil
                 selectAPIs[api] = apiDescription
             }
             else if optionAPIs[api] == nil && selectAPIs[api] != nil {
+            //api在可选api列表存在，已选api列表不存在，则把api添加到可选api中，同时把已选api中移除
                 optionAPIs[api] = apiDescription
                 selectAPIs[api] = nil
             }

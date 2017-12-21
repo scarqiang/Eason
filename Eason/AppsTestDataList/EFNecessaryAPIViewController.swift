@@ -1,5 +1,5 @@
 //
-//  EFNecessaryAPIViewController.swift
+//  EFNecessaryAPIViewController.swift - 检测必调api是否调用界面
 //  Eason
 //
 //  Created by Efun on 2017/11/2.

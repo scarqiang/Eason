@@ -1,5 +1,5 @@
 //
-//  EFGameListItemModel.swift
+//  EFGameListItemModel.swift - 游戏信息model
 //  Eason
 //
 //  Created by Efun on 2017/10/12.

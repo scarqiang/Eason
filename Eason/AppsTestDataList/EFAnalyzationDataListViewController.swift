@@ -1,5 +1,5 @@
 //
-//  EFAnalyzationDataListViewController.swift
+//  EFAnalyzationDataListViewController.swift - 检测SDK数据记录界面
 //  Eason
 //
 //  Created by Efun on 2017/10/16.

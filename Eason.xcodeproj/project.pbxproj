@@ -37,7 +37,6 @@
 		72A2EE081F97202000093C29 /* EFTestLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A2EE051F97202000093C29 /* EFTestLogViewController.swift */; };
 		72A2EE091F97202000093C29 /* EFTestTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A2EE061F97202000093C29 /* EFTestTypeViewController.swift */; };
 		72A2EE0D1F972D9400093C29 /* EFPlistItemCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A2EE0C1F972D9400093C29 /* EFPlistItemCellNode.swift */; };
-		72A9C33B1F8B57FB000FEE5D /* EFTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A9C33A1F8B57FB000FEE5D /* EFTestViewController.swift */; };
 		72A9C33E1F8B6B32000FEE5D /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A9C33C1F8B6B31000FEE5D /* ObjectMapper.framework */; };
 		72A9C33F1F8B6B32000FEE5D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A9C33D1F8B6B32000FEE5D /* RealmSwift.framework */; };
 		72B187CE1F78D2B700021F66 /* EFGameListCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B187CD1F78D2B700021F66 /* EFGameListCellNode.swift */; };
@@ -112,7 +111,6 @@
 		72A2EE051F97202000093C29 /* EFTestLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFTestLogViewController.swift; sourceTree = "<group>"; };
 		72A2EE061F97202000093C29 /* EFTestTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFTestTypeViewController.swift; sourceTree = "<group>"; };
 		72A2EE0C1F972D9400093C29 /* EFPlistItemCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFPlistItemCellNode.swift; sourceTree = "<group>"; };
-		72A9C33A1F8B57FB000FEE5D /* EFTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFTestViewController.swift; sourceTree = "<group>"; };
 		72A9C33C1F8B6B31000FEE5D /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		72A9C33D1F8B6B32000FEE5D /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		72B187CD1F78D2B700021F66 /* EFGameListCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFGameListCellNode.swift; sourceTree = "<group>"; };
@@ -275,7 +273,6 @@
 			isa = PBXGroup;
 			children = (
 				72A2EE0A1F97204100093C29 /* View */,
-				72A9C33A1F8B57FB000FEE5D /* EFTestViewController.swift */,
 				72D36D9C1F78B09000200200 /* EFGameListViewController.swift */,
 				72BFA0D41F99DCE9004B3B26 /* EFSearchGameViewController.swift */,
 				72C1A45A1F9DEC0800AFFA90 /* EFLoginViewController.swift */,
@@ -528,7 +525,6 @@
 				72A2EE081F97202000093C29 /* EFTestLogViewController.swift in Sources */,
 				721913471F98808000ADB028 /* EFLanguageCellNode.swift in Sources */,
 				7234B87C1F97495200F31218 /* EFPlistFileViewController.swift in Sources */,
-				72A9C33B1F8B57FB000FEE5D /* EFTestViewController.swift in Sources */,
 				72BFA0D51F99DCE9004B3B26 /* EFSearchGameViewController.swift in Sources */,
 				72D36D9D1F78B09000200200 /* EFGameListViewController.swift in Sources */,
 				721A13EB1F8F69FC00769855 /* EFGameListItemModel.swift in Sources */,

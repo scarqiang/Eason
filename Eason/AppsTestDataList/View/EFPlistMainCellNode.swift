@@ -1,5 +1,5 @@
 //
-//  EFPlistMainCellNode.swift
+//  EFPlistMainCellNode.swift - plist文件信息main内容cell node
 //  Eason
 //
 //  Created by Efun on 2017/10/18.

@@ -1,5 +1,5 @@
 //
-//  EFSearchGameViewController.swift
+//  EFSearchGameViewController.swift - 搜索界面
 //  Eason
 //
 //  Created by Efun on 2017/10/20.

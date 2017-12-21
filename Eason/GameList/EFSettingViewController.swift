@@ -1,5 +1,5 @@
 //
-//  EFSettingViewController.swift
+//  EFSettingViewController.swift - 设置界面
 //  Eason
 //
 //  Created by Efun on 2017/10/24.

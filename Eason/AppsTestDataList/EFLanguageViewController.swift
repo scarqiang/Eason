@@ -1,5 +1,5 @@
 //
-//  EFLanguageViewController.swift
+//  EFLanguageViewController.swift - 游戏语言展示界面
 //  Eason
 //
 //  Created by Efun on 2017/10/19.
