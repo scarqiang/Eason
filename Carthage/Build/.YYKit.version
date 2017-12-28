@@ -1,9 +1,18 @@
 {
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
   "commitish" : "1.0.9",
   "iOS" : [
     {
       "name" : "YYKit",
-      "hash" : "10abc9d8b51e0701a0afe10c277ce11899377ca8356d6e0b2567683465b835aa"
+      "hash" : "9f4b69a751fe55d30b2f07506b0cbe39ae24903494c19fcd8ed9e08c0ea2d10f"
     }
   ]
 }
