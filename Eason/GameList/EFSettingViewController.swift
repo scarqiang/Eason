@@ -230,6 +230,7 @@ class EFSettingViewController: ASViewController<ASDisplayNode>, ASTableDataSourc
     }
     
     func setupMobileHttpServer() {
+        //注意：CocoaHTTPServer的版本太旧，里依赖的GCDAsyncSocket不能支持arc，故update后，需要替换上最新的GCDAsyncSocket
         httpServer.setType("_http._tcp.")
         httpServer.setPort(8888)
         httpServer.setName("EfunExaminerHttpServer")
@@ -242,7 +243,6 @@ class EFSettingViewController: ASViewController<ASDisplayNode>, ASTableDataSourc
         catch {
             print("create directory fail")
         }
-//        let documentPath = Bundle.main.path(forResource: "index", ofType: "html")
         do {
             try document.write(toFile: documentPath.appending("index.html"), atomically: true, encoding: String.Encoding.utf8)
         }
