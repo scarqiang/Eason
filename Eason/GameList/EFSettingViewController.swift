@@ -111,6 +111,7 @@ class EFSettingViewController: ASViewController<ASDisplayNode>, ASTableDataSourc
         }
     }
     
+    //MARK: Tagget Action
     func didClickSwitchButton(isOn: Bool, indexPath: IndexPath) {
         if indexPath.row == 0 {
             EFUserInfo.saveResetUUIDStatus(isOn: isOn)

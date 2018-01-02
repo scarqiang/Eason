@@ -8,7 +8,6 @@
 
 import UIKit
 
-/// plist文件检测内容选择界面
 class EFPlistFileViewController: ASViewController<ASDisplayNode>, ASTableDataSource, ASTableDelegate {
 
     enum EFPlistDataType: String {

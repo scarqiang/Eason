@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// plist文件信息main内容cell node
 class EFPlistMainCellNode: ASCellNode {
     let keyNode = ASTextNode()
     let valueNode = ASTextNode()

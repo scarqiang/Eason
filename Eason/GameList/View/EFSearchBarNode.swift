@@ -8,15 +8,33 @@
 
 import UIKit
 
+/// 搜索页面代理
 protocol EFSearchBarNodeDelegate {
+    
+    /// 点击搜索按钮代理方法
+    ///
+    /// - Parameters:
+    ///   - bar: EFSearchBarNode
+    ///   - keyword: 关键字
     func didClickSearchButton(bar: EFSearchBarNode, keyword: String)
+    
+    /// 当搜索栏中的字体变化监听代理方法
+    ///
+    /// - Parameters:
+    ///   - text: 搜索框的输入的文字
+    ///   - keyword: 搜索框输入中的文字
     func shouldChange(text: String, keyword: String)
 }
 
 class EFSearchBarNode: ASDisplayNode, ASEditableTextNodeDelegate {
+    
+    /// 搜索框中的textview
     let textNode = ASEditableTextNode()
     
+    /// 收缩框中的icon
     let iconNode = ASImageNode()
+    
+    /// 代理
     var delegate: EFSearchBarNodeDelegate?
     
     convenience init(delegate: EFSearchBarNodeDelegate) {

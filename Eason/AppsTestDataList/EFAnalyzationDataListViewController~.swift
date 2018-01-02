@@ -11,7 +11,6 @@ import RealmSwift
 import DZNEmptyDataSet
 import LiquidFloatingActionButton
 
-/// 检测SDK数据记录界面
 class EFAnalyzationDataListViewController: ASViewController<ASDisplayNode>, ASTableDataSource, ASTableDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate, LiquidFloatingActionButtonDataSource, LiquidFloatingActionButtonDelegate  {
 
     let tableNode = ASTableNode(style: .plain)

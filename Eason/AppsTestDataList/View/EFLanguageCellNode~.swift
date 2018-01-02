@@ -8,7 +8,6 @@
 
 import UIKit
 
-/// 语言列表cell node
 class EFLanguageCellNode: ASCellNode {
     let imageNode = ASImageNode()
     let countryNode = ASTextNode()

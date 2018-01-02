@@ -8,7 +8,6 @@
 
 import UIKit
 
-/// 检测网络信息cell node
 class EFNetworkCellNode: ASCellNode {
     
     var dic: [String: Any]?

@@ -1,32 +1,41 @@
 //
-//  EFNecessaryAPICellNode.swift - 检测是否调用api的cell node
+//  EFOptionApiCellNode.swift - 可选api 列表的cell node
 //  Eason
 //
-//  Created by Efun on 2017/11/2.
+//  Created by Efun on 2017/11/4.
 //  Copyright © 2017年 Efun. All rights reserved.
 //
 
 import UIKit
 
-/// 检测是否调用api的cell node
-class EFNecessaryAPICellNode: ASCellNode {
+class EFOptionApiCellNode: ASCellNode {
     let titleNode = ASTextNode()
     let valueNode = ASTextNode()
     let iconImageNode = ASImageNode()
     var api = ""
     var apiDescription = ""
-    var isExist = false
+    var isChoose: Bool {
+        set {
+            self.iconImageNode.isHidden = !newValue
+        }
+        get {
+            return !self.iconImageNode.isHidden
+        }
+    }
     
-    convenience init(api: String, description: String, isExist: Bool) {
+    convenience init(api: String, description: String) {
         self.init()
         self.api = api
         self.apiDescription = description
         self.backgroundColor = UIColor.white
-        self.isExist = isExist
         self.setupCellContent()
     }
     
     private func setupCellContent() {
+        
+        self.iconImageNode.image = #imageLiteral(resourceName: "selected")
+        self.iconImageNode.isHidden = true
+        
         titleNode.attributedText = NSAttributedString(
             string: self.api,
             attributes: [
@@ -41,8 +50,6 @@ class EFNecessaryAPICellNode: ASCellNode {
                 NSAttributedStringKey.foregroundColor: UIColor.gray
             ])
         
-        iconImageNode.image = isExist ? #imageLiteral(resourceName: "check") : #imageLiteral(resourceName: "close")
-        
         self.addSubnode(valueNode)
         self.addSubnode(titleNode)
         self.addSubnode(iconImageNode)
@@ -52,6 +59,7 @@ class EFNecessaryAPICellNode: ASCellNode {
         super.layoutSpecThatFits(constrainedSize)
         
         self.valueNode.style.flexGrow = 1
+        self.valueNode.style.flexShrink = 1
         self.valueNode.maximumNumberOfLines = 0
         let textSpec = ASStackLayoutSpec(direction: .vertical,
                                          spacing: 5,
@@ -61,6 +69,7 @@ class EFNecessaryAPICellNode: ASCellNode {
         
         iconImageNode.style.preferredSize = CGSize(width: 40, height: 40)
         textSpec.style.flexGrow = 1
+        textSpec.style.flexShrink = 1
         let minW = UIScreen.main.bounds.width - 60
         textSpec.style.maxSize = CGSize(width: minW, height: CGFloat.greatestFiniteMagnitude)
         
@@ -70,8 +79,11 @@ class EFNecessaryAPICellNode: ASCellNode {
                                         justifyContent: .spaceBetween,
                                         alignItems: .stretch,
                                         children: [textSpec, iconImageNode])
+        
+        let maxW = UIScreen.main.bounds.width / 3
+        wapSpec.style.maxSize = CGSize(width: maxW, height: CGFloat.greatestFiniteMagnitude)
+        
         let edgeInset = UIEdgeInsetsMake(10, 10, 10, 5)
         return ASInsetLayoutSpec(insets: edgeInset, child: wapSpec)
     }
-    
 }

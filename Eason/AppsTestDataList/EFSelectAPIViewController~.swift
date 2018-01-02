@@ -8,15 +8,12 @@
 
 import UIKit
 
-/// 选择需要检测api调用数据
 class EFSelectApiModel: NSObject {
     var api: String? = ""
     var apiDescription: String? = ""
     var isSelected = false
 }
 
-
-/// 选择需要检测api调用的界面
 protocol EFSelectAPIDelegate {
     func didSelectOptionAPI(dic: [String: String])
 }

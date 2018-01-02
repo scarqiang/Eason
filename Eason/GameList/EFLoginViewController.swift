@@ -11,6 +11,7 @@ import SnapKit
 import TextFieldEffects
 import Alamofire
 
+/// 登录界面
 class EFLoginViewController: UIViewController {
 
     var usernameField: HoshiTextField?

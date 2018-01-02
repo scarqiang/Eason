@@ -9,7 +9,6 @@
 import UIKit
 import DZNEmptyDataSet
 
-/// API数据展示界面
 class EFAPIDataViewController: ASViewController<ASDisplayNode>, ASTableDataSource, ASTableDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
 
     var tableNode: ASTableNode?

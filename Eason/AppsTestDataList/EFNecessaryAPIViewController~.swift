@@ -8,14 +8,12 @@
 
 import UIKit
 
-///  检测必调api数据
 class EFCheckApiModel: NSObject {
     var api: String? = ""
     var apiDescription: String? = ""
     var isExist = false
 }
 
-///  检测必调api是否调用界面
 class EFNecessaryAPIViewController: ASViewController<ASDisplayNode>, ASTableDataSource, ASTableDelegate, EFSelectAPIDelegate {
     
     var modelArr = [EFResultExternalInterfaceModel]()

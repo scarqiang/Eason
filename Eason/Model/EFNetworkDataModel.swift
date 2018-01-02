@@ -9,6 +9,8 @@
 import UIKit
 import RealmSwift
 
+
+///网络数据model
 class EFNetworkDataModel: Object {
     
     @objc dynamic var networkData = ""

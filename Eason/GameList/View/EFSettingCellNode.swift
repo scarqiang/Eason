@@ -8,12 +8,22 @@
 
 import UIKit
 
+/// 设置界面的cell
 class EFSettingCellNode: ASCellNode {
-
+    
+    /// 开关
     let switchView = UISwitch()
+    
+    /// 包裹swichNode的node
     var switchNode: ASDisplayNode?
+    
+    /// 标题node
     let titleNode = ASTextNode()
+    
+    /// 标题
     var title: String?
+    
+    /// 代理
     var delegate: EFSettingCellNodeDelegate?
     
     convenience init(title: String, delegate: EFSettingCellNodeDelegate) {

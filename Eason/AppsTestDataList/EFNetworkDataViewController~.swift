@@ -9,7 +9,6 @@
 import UIKit
 import RealmSwift
 
-/// 网络数据展示界面
 class EFNetworkDataViewController: ASViewController<ASDisplayNode>, ASTableDataSource, ASTableDelegate {
 
     var tableNode: ASTableNode?

@@ -8,9 +8,16 @@
 
 import UIKit
 
+///  检测api内容cell node
 class EFAPIDataCellNode: ASCellNode {
+    
+    /// 数据model
     var model: EFResultExternalInterfaceModel?
+    
+    /// 显示描述
     let descriptionNode = ASTextNode()
+    
+    /// 显示api 方法名
     let apiNode = ASTextNode()
     let parameterNode = ASTextNode()
     

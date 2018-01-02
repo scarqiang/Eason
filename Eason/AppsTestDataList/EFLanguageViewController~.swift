@@ -8,7 +8,6 @@
 
 import UIKit
 
-/// 游戏语言展示界面
 class EFLanguageViewController: ASViewController<ASDisplayNode>, ASTableDataSource, ASTableDelegate {
 
     var tableNode: ASTableNode?

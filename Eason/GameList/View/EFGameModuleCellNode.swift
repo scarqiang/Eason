@@ -9,11 +9,21 @@
 import UIKit
 import DZNEmptyDataSet
 
+
+/// 首页各个地区cell node (collectionNode的Item， 内置tableView)
 class EFGameModuleCellNode: ASCellNode, ASTableDelegate, ASTableDataSource, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
+    
+    /// 内置tableNode游戏列表
     private let tableNode = ASTableNode()
+    
+    /// 顶部区域选择栏的高度
     var barHeight: CGFloat?
+    
+    /// 指定游戏区域数据
     var dataArray = [EFGameListItemModel]()
+    
+    /// 代理
     var delegate: EFGameModuleCellNodeDeleage?
     
     convenience init(listData: [EFGameListItemModel]?, delegate: EFGameModuleCellNodeDeleage) {
@@ -70,7 +80,7 @@ class EFGameModuleCellNode: ASCellNode, ASTableDelegate, ASTableDataSource, DZNE
         }
     }
     
-    //MARK: DZNEmptyDataSet
+    //MARK: DZNEmptyDataSet - 空界面view
     func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
         return UIImage(named: "interface.png")
     }

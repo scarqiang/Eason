@@ -16,7 +16,6 @@ enum EFTestDataType: Int {
     case language
 }
 
-/// 选择查看检测内容选项界面
 class EFTestTypeViewController: ASViewController<ASDisplayNode>, ASTableDataSource, ASTableDelegate {
 
     var tableNode: ASTableNode?

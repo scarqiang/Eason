@@ -9,6 +9,7 @@
 import UIKit
 import DZNEmptyDataSet
 
+/// 搜索界面
 class EFSearchGameViewController: ASViewController<ASDisplayNode>, ASTableDataSource, ASTableDelegate, EFSearchBarNodeDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
 
     var searchBarNode: EFSearchBarNode?
@@ -88,7 +89,7 @@ class EFSearchGameViewController: ASViewController<ASDisplayNode>, ASTableDataSo
         // Dispose of any resources that can be recreated.
     }
     
-    //search bar delegate
+    //MARK: search bar delegate
     func didClickSearchButton(bar: EFSearchBarNode, keyword: String) {
         self.resultsArr.removeAll()
         EFExamineTool.loadingView.startAnimating()

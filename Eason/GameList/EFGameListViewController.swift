@@ -11,6 +11,7 @@ import Alamofire
 import RealmSwift
 
 
+/// 首页游戏列表界面
 final class EFGameListViewController: ASViewController<ASDisplayNode>, ASTableDataSource, ASTableDelegate, ASCollectionDelegate, ASCollectionDataSource, EFSwitchBarNodeDelegate, EFGameModuleCellNodeDeleage {
 
     enum EFGameListType: String {
@@ -22,9 +23,16 @@ final class EFGameListViewController: ASViewController<ASDisplayNode>, ASTableDa
         static let allValues = [recent, sea, hk, kr]
     }
     
+    /// viewController node 的 rootNode
     private let rootNode = ASDisplayNode()
+    
+    /// 装载不同游戏区域列表的collection node
     private var collectionNode: ASCollectionNode?
+    
+    /// 顶部切换区域bar
     private var topBar: EFSwitchBarNode?
+    
+    /// 不同游戏区域数据
     private var dataArray = Array(repeatElement([EFGameListItemModel](), count: EFGameListType.allValues.count))
     
     var selectIndex: Int {

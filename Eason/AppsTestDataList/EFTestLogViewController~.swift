@@ -8,7 +8,6 @@
 
 import UIKit
 
-/// 测试打印日志结果界面
 class EFTestLogViewController: ASViewController<ASDisplayNode> {
 
     var logString: String?

@@ -10,6 +10,8 @@ import UIKit
 import ObjectMapper
 import RealmSwift
 
+
+/// 游戏列表信息model
 class EFGameListItemModel: Object, Mappable {
     
     @objc dynamic var pk = 0
@@ -28,6 +30,8 @@ class EFGameListItemModel: Object, Mappable {
     }
 }
 
+
+/// 具体游戏信息model
 class EFGameListItemInfoModel: Object, Mappable {
     
     @objc dynamic var game_region = ""

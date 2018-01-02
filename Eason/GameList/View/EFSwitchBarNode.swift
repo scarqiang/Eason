@@ -8,15 +8,34 @@
 
 import UIKit
 
+
+/// 顶部bar代理
 protocol EFSwitchBarNodeDelegate {
+    
+    /// 点击顶部bar后的代理方法
+    ///
+    /// - Parameters:
+    ///   - barNode: EFSwitchBarNode
+    ///   - indexPath: bar的collectionNode的indexPath
     func barNodeDidTapItem(_ barNode: EFSwitchBarNode,_ indexPath: IndexPath)
 }
 
+/// 首页顶部切换游戏地区的bar
 class EFSwitchBarNode: ASDisplayNode, ASCollectionDelegate, ASCollectionDataSource, EFSwitchBarItemDelegate {
+    
+    /// bar内置collocationNode
     var collectionNode: ASCollectionNode?
+    
+    /// 标题数组
     var titles = [String]()
+    
+    /// bar的高度
     static let viewHeight: CGFloat = 50.0
+    
+    /// 每个item的宽度
     private let itemWidth: CGFloat = 120
+    
+    /// 上传选择的item
     private var lastIndexPath: IndexPath?
     var delegate: EFSwitchBarNodeDelegate?
     
@@ -80,10 +99,20 @@ class EFSwitchBarNode: ASDisplayNode, ASCollectionDelegate, ASCollectionDataSour
     }
 }
 
+
+/// 切换区域bar的item代理
 protocol EFSwitchBarItemDelegate {
+    
+    /// 点击item代理事件
+    ///
+    /// - Parameters:
+    ///   - itemNode: 成员item EFSwitchBarItemNode
+    ///   - indexPath: item所在位置
     func switchBarItemNode(_ itemNode: EFSwitchBarItemNode, didTapAction indexPath: IndexPath)
 }
 
+
+/// bar中collection node的item
 class EFSwitchBarItemNode: ASCellNode {
     let titleTextNode = ASTextNode()
     var title: String?
@@ -104,6 +133,7 @@ class EFSwitchBarItemNode: ASCellNode {
         self.addSubnode(titleTextNode)
     }
     
+    /// 点击事件需要在didLoad中添加
     override func didLoad() {
         super.didLoad()
         let tap = UITapGestureRecognizer(target: self, action: #selector(didTapItemAction(_:)))

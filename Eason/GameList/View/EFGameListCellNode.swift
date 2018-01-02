@@ -9,6 +9,7 @@
 import UIKit
 import YYKit
 
+/// 一些布局固定参数
 struct EFGameListCellMarker {
     let iconSize = CGSize.init(width: 80, height: 80)
     let titleFont = UIFont.systemFont(ofSize: 18);
@@ -18,11 +19,23 @@ struct EFGameListCellMarker {
     let insetSpac: CGFloat = 20;
 }
 
+
+/// 游戏列表的成员cell
 final class EFGameListCellNode: ASCellNode {
+    
+    /// 游戏icon
     let iconImageNode: ASNetworkImageNode = ASNetworkImageNode()
+    
+    /// 标题
     let titleTextNode: ASTextNode = ASTextNode()
+    
+    /// game code
     let gameCodeTextNode: ASTextNode = ASTextNode()
+    
+    /// 游戏描述
     let descriptionTextNode: ASTextNode = ASTextNode()
+    
+    /// 固定参数值
     let marker: EFGameListCellMarker = EFGameListCellMarker()
     
     override init() {

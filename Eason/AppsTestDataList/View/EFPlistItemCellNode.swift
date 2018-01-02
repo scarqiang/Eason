@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// 检测plist内容状态的cell node
 class EFPlistItemCellNode: ASCellNode {
     let titleNode = ASTextNode()
     let valueNode = ASTextNode()

@@ -8,7 +8,6 @@
 
 import UIKit
 
-/// 检测是否调用api的cell node
 class EFNecessaryAPICellNode: ASCellNode {
     let titleNode = ASTextNode()
     let valueNode = ASTextNode()

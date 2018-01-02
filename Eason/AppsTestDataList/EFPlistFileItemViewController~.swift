@@ -9,7 +9,6 @@
 import UIKit
 import DZNEmptyDataSet
 
-/// plist文件内容界面
 class EFPlistFileItemViewController: ASViewController<ASDisplayNode>, ASTableDataSource, ASTableDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
 
     var tableNode: ASTableNode?
