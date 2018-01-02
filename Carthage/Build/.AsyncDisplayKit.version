@@ -1,9 +1,18 @@
 {
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
   "commitish" : "2.3.1",
   "iOS" : [
     {
       "name" : "AsyncDisplayKit",
-      "hash" : "023f57a9d39e9c500719333eac2d74d4668b99c4079e0594a760683ba8345418"
+      "hash" : "896d83cfa30fcae059b0f686cc8f98545f2d17f82d3ec8e613922522f725b52f"
     }
   ]
 }

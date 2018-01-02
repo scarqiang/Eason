@@ -12,4 +12,6 @@
 #import <PINCache/PINCache.h>
 #import <PINRemoteImage/PINRemoteImage.h>
 #import <YYKit/YYKit.h>
+#import <CocoaHTTPServer/HTTPServer.h>
+#import <CocoaHTTPServer/HTTPResponse.h>
 #endif /* Eason_Bridging_Header_h */

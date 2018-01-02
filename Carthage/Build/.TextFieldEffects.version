@@ -1,9 +1,18 @@
 {
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
   "commitish" : "1.4.0",
   "iOS" : [
     {
       "name" : "TextFieldEffects",
-      "hash" : "695cd67cde8dd933796ea1afaeb631f3509b81be4c4f896b48d7a70891e2f32e"
+      "hash" : "fd83b33b21879170795c7532793d9c8e480283fffe21f6783d01f2b464d88dfd"
     }
   ]
 }

@@ -11,8 +11,9 @@ import AdSupport
 
 class EFSettingViewController: ASViewController<ASDisplayNode>, ASTableDataSource, ASTableDelegate, EFSettingCellNodeDelegate {
 
-    let titles = ["测试模式重置UUID", "测试模式重置用户信息", "使用指定game code测试", "IDFA"]
+    let titles = ["测试模式重置UUID", "测试模式重置用户信息", "使用指定game code测试", "共享信息地址"]
     var tableNode: ASTableNode?
+    let httpServer: HTTPServer = HTTPServer()
     
     init() {
         let tableNode = ASTableNode(style: .grouped)
@@ -30,9 +31,26 @@ class EFSettingViewController: ASViewController<ASDisplayNode>, ASTableDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "设置"
+        setupMobileHttpServer()
         // Do any additional setup after loading the view.
     }
 
+    override func viewDidDisappear(_ animated: Bool) {
+        httpServer.stop()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if httpServer.isRunning() {
+            return
+        }
+        do  {
+            try httpServer.start()
+        } catch {
+            print("启动失败")
+        }
+        print("start server success in port \(httpServer.listeningPort()) \(httpServer.publishedName())")
+    }
+    
     //MARK: table node delegate and data source
     func numberOfSections(in tableNode: ASTableNode) -> Int {
         return 2
@@ -61,11 +79,12 @@ class EFSettingViewController: ASViewController<ASDisplayNode>, ASTableDataSourc
                 let cell = ASTextCellNode()
                 cell.backgroundColor = UIColor.white
                 cell.selectionStyle = .none
-                let IDFA = ASIdentifierManager.shared().advertisingIdentifier.uuidString
-                cell.textNode.attributedText = NSAttributedString(string: "IDFA: \(IDFA)", attributes: [
-                    NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 16),
-                    NSAttributedStringKey.foregroundColor: UIColor.black
-                    ])
+                if let IPAddress = getLocalIPAddressForCurrentWiFi() {
+                    cell.textNode.attributedText = NSAttributedString(string: "共享信息地址: \(IPAddress):8888/index.html", attributes: [
+                        NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 16),
+                        NSAttributedStringKey.foregroundColor: UIColor.black
+                        ])
+                }//ASIdentifierManager.shared().advertisingIdentifier.uuidString
                 return cell;
             }
             
@@ -176,4 +195,64 @@ class EFSettingViewController: ASViewController<ASDisplayNode>, ASTableDataSourc
     }
     */
 
+    func getLocalIPAddressForCurrentWiFi() -> String? {
+        var address: String?
+        
+        // get list of all interfaces on the local machine
+        var ifaddr: UnsafeMutablePointer<ifaddrs>? = nil
+        guard getifaddrs(&ifaddr) == 0 else {
+            return nil
+        }
+        guard let firstAddr = ifaddr else {
+            return nil
+        }
+        for ifptr in sequence(first: firstAddr, next: { $0.pointee.ifa_next }) {
+            
+            let interface = ifptr.pointee
+            
+            // Check for IPV4 or IPV6 interface
+            let addrFamily = interface.ifa_addr.pointee.sa_family
+            if addrFamily == UInt8(AF_INET) || addrFamily == UInt8(AF_INET6) {
+                // Check interface name
+                let name = String(cString: interface.ifa_name)
+                if name == "en0" {
+                    // Convert interface address to a human readable string
+                    var addr = interface.ifa_addr.pointee
+                    var hostName = [CChar](repeating: 0, count: Int(NI_MAXHOST))
+                    getnameinfo(&addr,
+                                socklen_t(interface.ifa_addr.pointee.sa_len),
+                                &hostName, socklen_t(hostName.count), nil, socklen_t(0), NI_NUMERICHOST)
+                    address = String(cString: hostName)
+                }
+            }
+        }
+        freeifaddrs(ifaddr)
+        return address
+    }
+    
+    func setupMobileHttpServer() {
+        //注意：CocoaHTTPServer的版本太旧，里依赖的GCDAsyncSocket不能支持arc，故update后，需要替换上最新的GCDAsyncSocket
+        httpServer.setType("_http._tcp.")
+        httpServer.setPort(8888)
+        httpServer.setName("EfunExaminerHttpServer")
+        let IDFA = ASIdentifierManager.shared().advertisingIdentifier.uuidString
+        let document = "<!DOCTYPE html><html><head><meta charset=\"UTF-8\"><title>复制你要的信息吧骚年</title></head><body><p>IDFA：\(IDFA)</p></body></html>"
+        let documentPath = NSHomeDirectory().appending("/Documents/Web/")
+        do {
+            try FileManager.`default`.createDirectory(atPath: documentPath, withIntermediateDirectories: true, attributes: nil)
+        }
+        catch {
+            print("create directory fail")
+        }
+        do {
+            try document.write(toFile: documentPath.appending("index.html"), atomically: true, encoding: String.Encoding.utf8)
+        }
+        catch {
+            print("write server html file fail")
+        }
+        
+        httpServer.setDocumentRoot(documentPath)
+        print(httpServer.documentRoot())
+        print(NSTemporaryDirectory())
+    }
 }

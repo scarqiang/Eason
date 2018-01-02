@@ -61,6 +61,8 @@
 		72C7B4C71F98C698004F9488 /* EFNetworkCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C7B4C61F98C698004F9488 /* EFNetworkCellNode.swift */; };
 		72C808981F7DE3D5002DB148 /* EFSwitchBarNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C808971F7DE3D5002DB148 /* EFSwitchBarNode.swift */; };
 		72D36D9D1F78B09000200200 /* EFGameListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D36D9C1F78B09000200200 /* EFGameListViewController.swift */; };
+		8CC3C3051FF4C20200576DF1 /* CocoaHTTPServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC3C3041FF4C20100576DF1 /* CocoaHTTPServer.framework */; };
+		8CCA2C871FF47EF0002E91EE /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 8CCA2C861FF47EF0002E91EE /* index.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +144,8 @@
 		72C7B4C61F98C698004F9488 /* EFNetworkCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFNetworkCellNode.swift; sourceTree = "<group>"; };
 		72C808971F7DE3D5002DB148 /* EFSwitchBarNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFSwitchBarNode.swift; sourceTree = "<group>"; };
 		72D36D9C1F78B09000200200 /* EFGameListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFGameListViewController.swift; sourceTree = "<group>"; };
+		8CC3C3041FF4C20100576DF1 /* CocoaHTTPServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaHTTPServer.framework; path = Carthage/Build/iOS/CocoaHTTPServer.framework; sourceTree = "<group>"; };
+		8CCA2C861FF47EF0002E91EE /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +165,7 @@
 				72B187D01F78DFF800021F66 /* YYKit.framework in Frameworks */,
 				72B5000C1F78AA0F00DFEA50 /* PINRemoteImage.framework in Frameworks */,
 				72B5000D1F78AA0F00DFEA50 /* PINCache.framework in Frameworks */,
+				8CC3C3051FF4C20200576DF1 /* CocoaHTTPServer.framework in Frameworks */,
 				72B500081F78A4EE00DFEA50 /* AsyncDisplayKit.framework in Frameworks */,
 				72B500061F78A4DF00DFEA50 /* Alamofire.framework in Frameworks */,
 			);
@@ -251,6 +256,7 @@
 		72B500041F78A4DE00DFEA50 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8CC3C3041FF4C20100576DF1 /* CocoaHTTPServer.framework */,
 				7293D7B51FD8EB9D008C5724 /* AdSupport.framework */,
 				72C1A45D1F9DEC4200AFFA90 /* SnapKit.framework */,
 				72C1A45C1F9DEC4200AFFA90 /* TextFieldEffects.framework */,
@@ -315,6 +321,7 @@
 				72B5AB481F789C4B00B35D7D /* Assets.xcassets */,
 				72B5AB4A1F789C4B00B35D7D /* LaunchScreen.storyboard */,
 				72B5AB4D1F789C4B00B35D7D /* Info.plist */,
+				8CCA2C861FF47EF0002E91EE /* index.html */,
 				72B500031F78A4B700DFEA50 /* Eason-Bridging-Header.h */,
 			);
 			path = Eason;
@@ -448,6 +455,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72B5AB4C1F789C4B00B35D7D /* LaunchScreen.storyboard in Resources */,
+				8CCA2C871FF47EF0002E91EE /* index.html in Resources */,
 				72B5AB491F789C4B00B35D7D /* Assets.xcassets in Resources */,
 				72B5AB471F789C4B00B35D7D /* Main.storyboard in Resources */,
 			);
@@ -489,6 +497,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/LiquidFloatingActionButton.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/TextFieldEffects.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CocoaHTTPServer.framework",
 			);
 			name = "Carthage Run Script";
 			outputPaths = (
@@ -729,10 +738,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = VJX2856TKC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -742,7 +751,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fun.examine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "7f9ec3cb-c6f6-41d7-9bb5-f4a842f64ef2";
+				PROVISIONING_PROFILE_SPECIFIER = inhouseall20171013;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/Eason/Eason-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

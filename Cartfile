@@ -8,3 +8,4 @@ github "dzenbot/DZNEmptyDataSet"
 github "yoavlt/LiquidFloatingActionButton" "master"
 github "raulriera/TextFieldEffects"
 github "SnapKit/SnapKit" ~> 4.0.0
+github "robbiehanson/CocoaHTTPServer"
